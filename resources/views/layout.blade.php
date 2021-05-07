@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="manifest" href="site.webmanifest">
-		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
 		<!-- CSS here -->
             <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -58,13 +58,15 @@
                                 <nav> 
                                     <ul id="navigation">    
                                         <li><a href="/"> Inicio</a></li>
-                                        <li><a href="/nosotros">Nosotros</a></li>
-                                        <li><a href="/servicios">Servicios</a></li>
-                                        <li><a href="/contacto">Contacto</a></li>
+                                        <li><a href="#funcionalidades">Funcionalidades</a></li>
+                                        <li><a href="#nosotros">Nosotros</a></li>
+                                        <li><a href="#software">Software</a></li>
+                                        <li><a href="#tecnologias">Tecnologías</a></li>
+                                        <li><a href="#contacto">Contacto</a></li>
                                     </ul>
                                 </nav>
                             </div>
-                        </div>             
+                        </div>
                         <div class="col-xl-2 col-lg-2 col-md-3">
                             <div class="header-right-btn f-right d-none d-lg-block">
                                 <a href="/login" class="btn header-btn">Iniciar sesión</a>
@@ -120,10 +122,9 @@
                             <div class="footer-tittle">
                                 <h4>Acceso rápido</h4>
                                 <ul>
-                                    <li><a href="about.html">Nosotros</a></li>
-                                    <li><a href="single-blog.html">Pricing</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="contact.html">Contacto</a></li>
+                                    <li><a href="#nosotros">Nosotros</a></li>
+                                    <li><a href="#contacto">Contacto</a></li>
+                                    <li><a href="https://www.softpatagonia.com" target="_blank">Patagonia</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -167,7 +168,7 @@
                          <div class="col-xl-12 ">
                              <div class="footer-copy-right text-center">
                                  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                 Todos los derechos reservados &copy;<script>document.write(new Date().getFullYear());</script> SoftPatagonia </a>
+                                 Todos los derechos reservados &copy;<script>document.write(new Date().getFullYear());</script> <a href="https://www.softpatagonia.com/" target="_blank"> SoftPatagonia </a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                              </div>
                          </div>

@@ -14,7 +14,7 @@
                                     <p data-animation="fadeInLeft" data-delay=".6s">Tus notificaciones desde cualquier dispositivo</p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s">
-                                        <a href="industries.html" class="btn hero-btn">Quiero probarlo!</a>
+                                        <a href="#funcionalidades" class="btn hero-btn">Quiero probarlo!</a>
                                     </div>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
                                     <p data-animation="fadeInLeft" data-delay=".6s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravi.</p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s">
-                                        <a href="industries.html" class="btn hero-btn">Contact Us</a>
+                                        <a href="#contacto" class="btn hero-btn">Conversemos</a>
                                     </div>
                                 </div>
                             </div>
@@ -51,13 +51,13 @@
         </div>
         <!-- Slider Area End-->
         <!-- What We do start-->
-        <div class="what-we-do we-padding">
+        <div class="what-we-do we-padding" id="funcionalidades">
             <div class="container">
                 <!-- Section-tittle -->
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-tittle text-center">
-                            <h2>What We Will Do For Your Business​</h2>
+                            <h2>Funcionalidades</h2>
                         </div>
                     </div>
                 </div>
@@ -68,12 +68,10 @@
                                 <span  class="flaticon-tasks"></span>
                             </div>
                             <div class="do-caption">
-                                <h4>Link Building</h4>
-                                <p>Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse!</p>
+                                <h4>Revisa el estado de tus notificaciones</h4>
+                                <p>Ingresa al panel de notificaciones y al accionar sobre el bóton de aceptar, darás curso a que se apruebe la notificación.</p>
                             </div>
-                            <div class="do-btn">
-                                <a href="#"><i class="ti-arrow-right"></i> get started</a>
-                            </div>
+                           
                         </div>
                     </div>
                      <div class="col-lg-4 col-md-6">
@@ -82,12 +80,10 @@
                                 <span  class="flaticon-social-media-marketing"></span>
                             </div>
                             <div class="do-caption">
-                                <h4>Content marketing</h4>
-                                <p>Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse!</p>
+                                <h4>Aprobar, rechazar o marcar como pendiente</h4>
+                                <p>Al ingresar al panel, podrás accionar uno de los botones para aprobar, dejar pendiente o rechazar una notificación.</p>
                             </div>
-                            <div class="do-btn">
-                                <a href="#"><i class="ti-arrow-right"></i> get started</a>
-                            </div>
+                               
                         </div>
                     </div>
                      <div class="col-lg-4 col-md-6">
@@ -96,20 +92,34 @@
                                 <span  class="flaticon-project"></span>
                             </div>
                             <div class="do-caption">
-                                <h4>On Page SEO</h4>
-                                <p>Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse!</p>
+                                <h4>Realiza búsquedas de las notificaciones por fecha, categoria etc... </h4>
+                                <p>Realiza búsquedas y has seguimiento a tus notificaciones de manera rápida y eficiente.</p>
                             </div>
-                            <div class="do-btn">
-                                <a href="#"><i class="ti-arrow-right"></i> get started</a>
-                            </div>
+                           
                         </div>
+                       
                     </div>
+                      
                 </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                            <a href="{{ route('login') }}" class="btn hero-btn" style="width: 100%;padding: 30px;">Ingresa a tus notificaciones</a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        
+                    </div>
+                    
+                </div>
+               
             </div>
         </div>
         <!-- What We do End-->
-        <!-- We Create Start -->
-        <div class="we-create-area create-padding">
+        <!-- Nosotros -->
+        <div class="we-create-area create-padding" id="nosotros">
             <div class="container">
                 <div class="row d-flex align-items-end">
                     <div class="col-lg-6 col-md-12">
@@ -119,23 +129,23 @@
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="we-create-cap">
-                            <h3>We Create a Steps to Build a Successful Digital Product</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis orem ipsum dolor sit amet, consectetur adipiscing.</p>
-                            <a href="#" class="btn">Contact Us</a>
+                            <h3>Aprueba notificaciones desde cualquier ubicación</h3>
+                            <p><strong>Notifyboard</strong> es un producto de Softpatagonia dedicado facilitar el flujo de solicitudes de tu equipo de trabajo, el cual te permite acceder desde cualquier ubicación con un pc o smartphone.</p>
+                            <!--<a href="#" class="btn">Contact Us</a>-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- We Create End -->
-        <!-- Generating Start -->
-        <div class="generating-area ">
+        <!-- Nosotros End -->
+        <!-- Nuestro sistema -->
+        <div class="generating-area" id="software">
             <div class="container">
                  <!-- Section-tittle -->
                  <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-tittle text-center">
-                            <h2>Generating New Customers Via Online Mode​​</h2>
+                            <h2>Nuestro sistema</h2>
                         </div>
                     </div>
                 </div>
@@ -143,290 +153,108 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="single-generating d-flex mb-30">
                             <div class="generating-icon">
-                                <span class="flaticon-chart"></span>
+                                <i class="fas fa-list-alt" style="color: #4ad0ff;font-size: 60px;"></i>
                             </div>
                             <div class="generating-cap">
-                                <h4>All Sizes Business</h4>
-                                <p>Seddo eiusmod tempor incididunt labore lore magna aliqua uisipsum suspendis incididun
-                                    se ultrices gravida. </p>
+                                <h4>Organización</h4>
+                                <p>Revisa una lista detallada de cada notificación en tu perfil ordenada por fecha, número de notificación y descripción.</p>
                             </div>
                         </div>
                     </div> 
                     <div class="col-lg-6 col-md-6">
                         <div class="single-generating d-flex mb-30">
                             <div class="generating-icon">
-                                <span class="flaticon-social-media-marketing"></span>
+                                <i class="fas fa-user" style="color: #4ad0ff;font-size: 60px;"></i>
                             </div>
                             <div class="generating-cap">
-                                <h4>Awesome Results</h4>
-                                <p>Seddo eiusmod tempor incididunt labore lore magna aliqua uisipsum suspendis incididun
-                                    se ultrices gravida. </p>
+                                <h4>Personalización</h4>
+                                <p>Obtén un perfil propio acorde a tu nivel jerarquico, el cual te permitirá disponer tu propia organización y distribución de notificaciones.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="single-generating d-flex mb-30">
                             <div class="generating-icon">
-                                <span class="flaticon-speaker"></span>
+                                <i class="fas fa-mobile-alt" style="color: #4ad0ff;font-size: 60px;"></i>
                             </div>
                             <div class="generating-cap">
-                                <h4>Keep you in the Loop</h4>
-                                <p>Seddo eiusmod tempor incididunt labore lore magna aliqua uisipsum suspendis incididun
-                                    se ultrices gravida. </p>
+                                <h4>Portabilidad</h4>
+                                <p>Aprueba, rechaza o mantén notificaciones desde cualquier ubicación con un smartphone, pc o notebook.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="single-generating d-flex mb-30">
                             <div class="generating-icon">
-                                <span class="flaticon-growth"></span>
+                                <i class="fas fa-smile" style="color: #4ad0ff;font-size: 60px;"></i>
                             </div>
                             <div class="generating-cap">
-                                <h4>Significant ROI</h4>
-                                <p>Seddo eiusmod tempor incididunt labore lore magna aliqua uisipsum suspendis incididun
-                                    se ultrices gravida. </p>
+                                <h4>Compromiso</h4>
+                                <p>Estamos dispuestos a actualizar la plataforma en lo necesario y en disponer soporte a nuestros clientes, que son nuestra prioridad.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Generating End -->
-        <!--Choose Best start-->
-        <div class="choose-best choose-padding">
-            <div class="container">
-                <!-- Section-tittle -->
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-7">
-                        <div class="section-tittle text-center">
-                            <h2>Choose Your Very Best Pricing Plan </h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-choose text-center mb-30">
-                            <div class="do-icon">
-                                <span  class="flaticon-growth"></span>
-                            </div>
-                            <div class="do-caption">
-                                <h4>$ 05.00</h4>
-                                <ul>
-                                    <li>Increase traffic 50%</li>
-                                    <li>Social Media Marketing</li>
-                                    <li>10 Free Optimization</li>
-                                    <li>24/7  support</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="single-choose active text-center mb-30">
-                            <div class="do-icon">
-                                <span class="flaticon-award"></span>
-                            </div>
-                            <div class="do-caption">
-                                <h4>$ 20.00</h4>
-                                <ul>
-                                    <li>Increase traffic 50%</li>
-                                    <li>Social Media Marketing</li>
-                                    <li>10 Free Optimization</li>
-                                    <li>24/7  support</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="single-choose text-center mb-30">
-                            <div class="do-icon">
-                                <span  class="flaticon-project"></span>
-                            </div>
-                            <div class="do-caption">
-                                <h4>$ 30.00</h4>
-                                <ul>
-                                    <li>Increase traffic 50%</li>
-                                    <li>Social Media Marketing</li>
-                                    <li>10 Free Optimization</li>
-                                    <li>24/7  support</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Choose Best do End-->
+        <!-- Nuestro sistema End -->
         <!-- Visit Stuffs Start -->
-        <div class="visit-area fix visite-padding">
+        <div class="visit-area fix visite-padding" id="tecnologias">
             <div class="container">
                 <!-- Section-tittle -->
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6 pr-0">
                         <div class="section-tittle text-center">
-                            <h2>Visit Some Of Our Awsome Stuffs</h2>
+                            <h2>Tecnologías</h2>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid p-0">
+            <div class="container p-0">
                 <div class="row ">
-                    <div class="col-lg-3 col-md-4">
-                        <div class="single-visited mb-30">
+                    <div class="col-lg-4 col-md-4">
+                        <!--<div class="single-visited mb-30">
                             <div class="visited-img">
-                                <img src="assets/img/visit/visit_1.jpg" alt="">
+                                <img src="assets/img/visit/laravel.png" alt="">
                             </div>
                             <div class="visited-cap">
-                                <h3><a href="#">citmv.com</a></h3>
-                                <p>Email Marketing</p>
+                                <h3><a href="#">Laravel</a></h3>
+                                <p>Framework de php</p>
+                            </div>
+                        </div>-->
+                        <div class="card" style="border-radius: 20px;">
+                            <img src="assets/img/visit/laravel2.jpeg" class="card-img-top" style="border-radius: 20px;">
+                            <div class="card-body">
+                                <h5 class="card-title">Laravel</h5>
+                                <p class="card-text">Framework de PHP</p>
                             </div>
                         </div>
                     </div> 
-                     <div class="col-lg-3 col-md-4">
-                        <div class="single-visited mb-30">
-                            <div class="visited-img">
-                                <img src="assets/img/visit/visit_2.jpg" alt="">
-                            </div>
-                            <div class="visited-cap">
-                                <h3><a href="#">mvsp.net</a></h3>
-                                <p>Email Marketing</p>
+                     <div class="col-lg-4 col-md-4">
+                        <div class="card" style="border-radius: 20px;">
+                            <img src="assets/img/visit/bootstrap.png" class="card-img-top" style="border-radius: 20px;">
+                            <div class="card-body">
+                                <h5 class="card-title">Bootstrap</h5>
+                                <p class="card-text">Librería de CSS</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4">
-                        <div class="single-visited mb-30">
-                            <div class="visited-img">
-                                <img src="assets/img/visit/visit_3.jpg" alt="">
-                            </div>
-                            <div class="visited-cap">
-                                <h3><a href="#">dmcal.co</a></h3>
-                                <p>Email Marketing</p>
+                    <div class="col-lg-4 col-md-4">
+                        
+                    <div class="card" style="border-radius: 20px;">
+                            <img src="assets/img/visit/laragon.jpg" class="card-img-top" style="border-radius: 20px;">
+                            <div class="card-body">
+                                <h5 class="card-title">Laragon</h5>
+                                <p class="card-text">Nuestro servidor local</p>
                             </div>
                         </div>
                     </div> 
-                    <div class="col-lg-3 col-md-4">
-                        <div class="single-visited mb-30">
-                            <div class="visited-img">
-                                <img src="assets/img/visit/visit_4.jpg" alt="">
-                            </div>
-                            <div class="visited-cap">
-                                <h3><a href="#">dmco.net</a></h3>
-                                <p>Email Marketing</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
         <!-- Visit Stuffs Start -->
-         <!-- Testimonial Start -->
-         <div class="testimonial-area">
-            <div class="container">
-               <div class="testimonial-main">
-                    <!-- Section-tittle -->
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-lg-5  col-md-8 pr-0">
-                            <div class="section-tittle text-center">
-                                <h2>What Client Say About Us</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                            <div class="col-lg-10 col-md-9">
-                                <div class="h1-testimonial-active">
-                                    <!-- Single Testimonial -->
-                                    <div class="single-testimonial text-center">
-                                        <div class="testimonial-caption ">
-                                            <div class="testimonial-top-cap">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                                            </div>
-                                            <!-- founder -->
-                                            <div class="testimonial-founder d-flex align-items-center justify-content-center">
-                                                <div class="founder-img">
-                                                    <img src="assets/img/testmonial/testimonial.png" alt="">
-                                                </div>
-                                            <div class="founder-text">
-                                                <span>Oliva jems</span>
-                                                <p>UIX designer</p>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Testimonial -->
-                                    <div class="single-testimonial text-center">
-                                        <div class="testimonial-caption ">
-                                            <div class="testimonial-top-cap">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                                            </div>
-                                            <!-- founder -->
-                                            <div class="testimonial-founder d-flex align-items-center justify-content-center">
-                                                <div class="founder-img">
-                                                    <img src="assets/img/testmonial/testimonial.png" alt="">
-                                                </div>
-                                            <div class="founder-text">
-                                                <span>Oliva jems</span>
-                                                <p>UIX designer</p>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-               </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-        <!-- Tips Triks Start -->
-        <div class="tips-triks-area tips-padding">
-            <div class="container">
-                 <!-- Section-tittle -->
-                 <div class="row d-flex justify-content-center">
-                    <div class="col-lg-6 col-md-8 pr-0">
-                        <div class="section-tittle text-center">
-                            <h2>Tips and Tricks From Our Exparts</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-tips mb-50">
-                            <div class="tips-img">
-                                <img src="assets/img/tips/tips_1.jpg" alt="">
-                            </div>
-                            <div class="tips-caption">
-                                <h4><a href="#">Twice profit than before you ever got</a></h4>
-                                <span>Continue Reading</span>
-                                <p>March 3, 2020</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-tips mb-50">
-                            <div class="tips-img">
-                                <img src="assets/img/tips/tips_2.jpg" alt="">
-                            </div>
-                            <div class="tips-caption">
-                                <h4><a href="#">Twice profit than before you ever got</a></h4>
-                                <span>Continue Reading</span>
-                                <p>March 3, 2020</p>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-tips mb-50">
-                            <div class="tips-img">
-                                <img src="assets/img/tips/tips_3.jpg" alt="">
-                            </div>
-                            <div class="tips-caption">
-                                <h4><a href="#">Twice profit than before you ever got</a></h4>
-                                <span>Continue Reading</span>
-                                <p>March 3, 2020</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Tips Triks End -->
+
          <!-- have-project Start-->
          <div class="have-project">
             <div class="container">
@@ -434,22 +262,83 @@
                     <div class="row d-flex align-items-center">
                         <div class="col-xl-7 col-lg-9 col-md-12">
                             <div class="wantToWork-caption">
-                                <h2>Have project in mind?</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut.</p>
+                                <h2>Queremos conocer tu caso</h2>
+                                <p>NotifyBoard se adapta a tus necesidades, cuéntanos qué tienes en mente</p>
                             </div>
                         </div>
                         <div class="col-xl-5 col-lg-3 col-md-12">
                            <div class="wantToWork-btn f-right">
-                                <a href="#" class="btn btn-ans">Contact Us</a>
+                                <a href="#contacto" class="btn btn-ans">Contactar</a>
                            </div>
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
         <!-- have-project End -->
 
-
+    <!-- ================ contact section start ================= -->
+    <section class="contact-section visite-padding" id="contacto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Conversemos</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Consulta'" placeholder=" Consulta"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tu nombre'" placeholder="Tu nombre">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tu email'" placeholder="Tu email">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Título'" placeholder="Título">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <button type="submit" class="button btn-block button-contactForm boxed-btn">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-home"></i></span>
+                            <div class="media-body">
+                                <h3>18 de Septiembre 619</h3>
+                                <p>Temuco, Chile</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                            <div class="media-body">
+                                <h3>+56 9 4429 2425</h3>
+                                <p>Lunes a viernes 9am a 6pm</p>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                            <span class="contact-info__icon"><i class="ti-email"></i></span>
+                            <div class="media-body">
+                                <h3>info@softpatagonia.com</h3>
+                                <p>¡Envía tus consultas!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- ================ contact section end ================= -->
         
 @endsection
