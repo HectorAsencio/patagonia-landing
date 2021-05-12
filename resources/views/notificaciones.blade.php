@@ -46,65 +46,40 @@
                     <div class="col-lg-12">
 
                     <table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Descripción</th>
-            <th scope="col">Fecha</th>
-            <th scope="col">Hora</th>
-            <th scope="col">Estado</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- REPETIR INFINITO -->
-        <tr>
-            <th scope="row">1</th>
-            <td>Notificacion numero uno.</td>
-            <td>02-05-2021</td>
-            <td>14:00</td>
-            <td>Inicial</td>
-            <td>
-                <button type="button" class="btn btn-success btn-circle btn-md"><i class="fa fa-check"></i></button>
-                <button type="button" class="btn btn-info btn-circle btn-md"><i class="fa fa-clock"></i></button>
-                <button type="button" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times"></i></button>
-            </td>
-        </tr>
-        <!-- REPETIR INFINITO -->
-        <!-- REPETIR INFINITO -->
-        <tr>
-            <th scope="row">2</th>
-            <td>Notificacion numero dos.</td>
-            <td>02-05-2021</td>
-            <td>14:00</td>
-            <td>Inicial</td>
-            <td>
-                <button type="button" class="btn btn-success btn-circle btn-md"><i class="fa fa-check"></i></button>
-                <button type="button" class="btn btn-info btn-circle btn-md"><i class="fa fa-clock"></i></button>
-                <button type="button" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times"></i></button>
-            </td>
-        </tr>
-        <!-- REPETIR INFINITO -->
-        <!-- REPETIR INFINITO -->
-        <tr>
-            <th scope="row">3</th>
-            <td>Notificacion numero tres.</td>
-            <td>02-05-2021</td>
-            <td>14:00</td>
-            <td>Rechazado</td>
-            <td>
-                <button type="button" disabled class="btn btn-success btn-circle btn-md"><i class="fa fa-check"></i></button>
-                <button type="button" disabled class="btn btn-info btn-circle btn-md"><i class="fa fa-clock"></i></button>
-                <button type="button" disabled class="btn btn-danger btn-circle btn-md"><i class="fa fa-times"></i></button>
-            </td>
-        </tr>
-        <!-- REPETIR INFINITO -->
-    </tbody>
-</table>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Solicitante</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                    </div>
+                            @foreach ($notificaciones as $noti)
+
+                            <tr>
+                                <th scope="row">{{ $noti->id }}</th>
+                                <td>{{ $noti->descripcion }}</td>
+                                <td>{{ $noti->solicitante }}</td>
+                                <td>{{ $noti->created_at }}</td>
+                                <td>{{ $noti->estado }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-success btn-circle btn-md"><i class="fa fa-check"></i></button>
+                                    <button type="button" class="btn btn-info btn-circle btn-md"><i class="fa fa-clock"></i></button>
+                                    <button type="button" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times"></i></button>
+                                </td>
+                            </tr>
+                            
+                            @endforeach
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
+        </div>
     </section>
 
 

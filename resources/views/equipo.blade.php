@@ -56,41 +56,19 @@
                             </tr>
                         </thead>
                         <tbody>
+
+                        @foreach ($team as $usuario)
+
                             <tr>
-                                <td style="width:10%"><img src="assets/img/users/user-22.png" style="width:50%"></img></td>
-                                <td>Leticia Palazuelos</td>
-                                <td>Director</td>
-                                <td>+56 9 1111 2222</td>
-                                <td>leti@gmail.com</td>
+                                <td style="width:10%"><img src="assets/img/users/{{$usuario->avatar}}" style="width:50%"></img></td>
+                                <td>{{$usuario->nombre}}</td>
+                                <td>{{$usuario->cargo}}</td>
+                                <td>{{$usuario->telefono}}</td>
+                                <td>{{$usuario->email}}</td>
                             </tr>
-                            <tr>
-                                <td style="width:10%"><img src="assets/img/users/user- (10).png" style="width:50%"></img></td>
-                                <td>Kevin Briceño</td>
-                                <td>Director</td>
-                                <td>+56 9 1133 1122</td>
-                                <td>kevin@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td style="width:10%"><img src="assets/img/users/user-11.png" style="width:50%"></img></td>
-                                <td>Hector Ascencio</td>
-                                <td>Supervisor</td>
-                                <td>+56 9 6611 2233</td>
-                                <td>hector@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td style="width:10%"><img src="assets/img/users/user-16.png" style="width:50%"></img></td>
-                                <td>Ignacio Contreras</td>
-                                <td>Supervisor</td>
-                                <td>+56 9 4441 2221</td>
-                                <td>ignacio@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td style="width:10%"><img src="assets/img/users/user- (3).png" style="width:50%"></img></td>
-                                <td>Marcelo Carreño</td>
-                                <td>Supervisor</td>
-                                <td>+56 9 331 2277</td>
-                                <td>marselo@gmail.com</td>
-                            </tr>
+
+                        @endforeach
+
                         </tbody>
                     </table>
 
