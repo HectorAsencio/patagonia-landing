@@ -50,7 +50,7 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2 col-md-1">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png"></a>
+                                <a href="/"><img src="assets/img/logo/logo.png"></a>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-8 col-md-8">
@@ -70,8 +70,10 @@
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                                     style="padding: 9px;font-size: 18px;background-color: #021A8E;"
                                     aria-expanded="false">
-                                    Kevin Briceño
-                                    <img src="assets/img/users/user- (10).png"
+
+                                    {{ $sesionData['nombre'] }}
+
+                                    <img src="assets/img/users/{{$sesionData['avatar']}}"
                                         style="width:30px;margin-right: 5px;border-radius: 100%;border: 2px solid;">
                                 </button>
                                 <ul class="dropdown-menu" role="menu"
@@ -85,7 +87,7 @@
                                                 class="fa fa-question-circle"></i> Ayuda</a></li>
                                     <li class="divider"></li>
                                     <hr style="margin: 10px 0;">
-                                    <li><a class="btn btn-danger btn-block" href="/users/logout"
+                                    <li><a class="btn btn-danger btn-block" href="/logout"
                                             style="color: #60ad5e;color:white;">Salir</a></li>
                                 </ul>
                             </div>

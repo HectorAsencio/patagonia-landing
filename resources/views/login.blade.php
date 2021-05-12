@@ -11,11 +11,14 @@
                         <h2 class="contact-title">Iniciar sesión</h2>
                     </div>
                     <div class="col-lg-12">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <form class="form-contact contact_form" action="/login" method="POST" novalidate="novalidate">
+
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
+
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" placeholder="Username...">
+                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" placeholder="Email...">
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
