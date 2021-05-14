@@ -18,13 +18,22 @@ class Notificaciones extends Migration
         Schema::create('notificaciones', function (Blueprint $table){
 
             $table->id();
+
+            $table->bigInteger('solicitante_id')->unsigned()->index()->nullable();
+            $table->foreign('solicitante_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->bigInteger('receptor_id')->unsigned()->index()->nullable();
+            $table->foreign('receptor_id')->references('id')->on('users')->onDelete('cascade');
+            
+            $table->text('titulo');
+            $table->longText('descripcion');
+
             $table->string('estado');
-            $table->string('solicitante');
-            $table->string('cargo_solicitante');
-            $table->string('cargo_aprobador');
-            $table->string('email_solicitante');
-            $table->text('descripcion');
-            $table->timestamps();
+
+            $table->date('creado_at');
+            $table->date('respondido_at');
+
+            $table->longText('motivo');
 
         });
     }

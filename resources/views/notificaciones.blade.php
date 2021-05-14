@@ -1,4 +1,4 @@
-@extends('layoutUser')
+@extends('layout')
 
 @section('content')
 
@@ -36,14 +36,15 @@
 </style>
 
     <!-- ================ contact section start ================= -->
-    <section class="contact-section" style="margin-top:200px">
+    <section class="contact-section">
             <div class="container">
 
                 <div class="row">
                     <div class="col-12">
                         <h2 class="contact-title">Notificaciones</h2>
+                        <a href="/notificaciones/crear" class="btn btn-success" style="padding:15px;background-color:#4ad0ff !important">Crear</a>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" style="margin-top:20px">
 
                     <table class="table">
                         <thead>
