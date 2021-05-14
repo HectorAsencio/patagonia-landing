@@ -28,39 +28,12 @@ Route::get('/', function () {
 // USUARIOS (LOGIN) //
 Route::get('usuarios', [UsuariosController::class, 'index']);
 
-// INICIO DE SESIÓN (GET)
-Route::get('/login', function () {
-    return view('login');
-})->name("login");
-
-// INICIO DE SESIÓN (POST)
-Route::post('/login', function (Request $request) {
-
-    $email = $request->input('email');
-    $password = $request->input('password');
-
-    $userFound = DB::table('usuarios')->where('email', $email)->where('password', $password)->first();
-
-    if ($userFound) {
-
-        $request->session()->put('email', $email);
-        $request->session()->put('nombre', $userFound->nombre);
-        $request->session()->put('avatar', $userFound->avatar);
-
-        return redirect('/notificaciones');
-    }
-    else {
-        return "Váyase de NotifyBoard";
-    }
-
-})->name("login");
-
 // ELIMINAR DATOS DE SESIÓN
 Route::get('/logout', function (Request $request) {
 
     $request->session()->flush();
+    return redirect('/');
 
-    return redirect('/login');
 })->name("logout");
 
 // NOTIFICACIONES //
@@ -74,9 +47,15 @@ Route::get('/notificaciones', function (Request $request)
 
     return view('notificaciones', ['notificaciones' => $notificaciones, 'sesionData' => $sesionData]);
 
-});
+})->name("notificaciones");
 
-//Route::get('notificaciones', [NotificacionesController::class, 'index']);
+// CREAR NOTIFICACIÓN (GET)
+Route::get('/notificaciones/crear', function () {
+
+    $users =  DB::table('users')->get();
+
+    return view('crearNotificacion', ['users' => $users]);
+})->name("crearNotificacion");
 
 // EQUIPO //
 // LISTADO
@@ -85,7 +64,7 @@ Route::get('/equipo', function (Request $request)
     $sesionArray = array('nombre' => $request->session()->get('nombre', 'Sin sesión'),'email' => $request->session()->get('email', 'Sin sesión'),'avatar' => $request->session()->get('avatar', 'Sin sesión'));
     $sesionData = new ArrayObject($sesionArray);
 
-    $team =  DB::table('usuarios')->get();
+    $team =  DB::table('users')->get();
 
     return view('equipo', ['team' => $team, 'sesionData' => $sesionData]);
 });
@@ -98,3 +77,20 @@ Route::get('/equipo', function (Request $request)
 Route::get('/configuracion', function () {
     return view('configuracion');
 });
+
+// AUTENTICACIÓN
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

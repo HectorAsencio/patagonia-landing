@@ -1,4 +1,4 @@
-@extends('layoutUser')
+@extends('layout')
 
 @section('content')
 
@@ -36,7 +36,7 @@
 </style>
 
     <!-- ================ contact section start ================= -->
-    <section class="contact-section" style="margin-top:200px">
+    <section class="contact-section">
             <div class="container">
 
                 <div class="row">
@@ -61,9 +61,9 @@
 
                             <tr>
                                 <td style="width:10%"><img src="assets/img/users/{{$usuario->avatar}}" style="width:50%"></img></td>
-                                <td>{{$usuario->nombre}}</td>
-                                <td>{{$usuario->cargo}}</td>
-                                <td>{{$usuario->telefono}}</td>
+                                <td>{{$usuario->name}}</td>
+                                <td>???</td>
+                                <td>???</td>
                                 <td>{{$usuario->email}}</td>
                             </tr>
 
