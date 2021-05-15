@@ -3,6 +3,15 @@
 @section('content')
 
 <style>
+    .btn-primary {
+        background-color: #4ad0ff !important;
+
+    }
+    .btn-primary::before {
+        background-color: #4ad0ff !important;
+        transition: transform 0s;
+    }
+
     .btn-success {
         background-color: green !important;
 
@@ -41,23 +50,17 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="contact-title">Nueva Notificacion</h2>
+                        <h2 class="contact-title">Mis notificaciones</h2>
+                        <a href="/notificaciones/crear" class="btn btn-success" style="padding:15px;background-color:#4ad0ff !important">Crear</a>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" style="margin-top:20px">
 
-                    <form method="POST">
-                        <label>Titulo<label>
-                        <input id=titulo> </input>
-                        <label>Descripcion<label>
-                        <input id= descripcion>
-                        <label>Receptor<label>
-                    </form>
                     <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Descripción</th>
-                                <th scope="col">Solicitante</th>
+                                <th scope="col">Receptor</th>
                                 <th scope="col">Fecha</th>
                                 <th scope="col">Estado</th>
                                 <th scope="col">Acciones</th>
@@ -70,13 +73,11 @@
                             <tr>
                                 <th scope="row">{{ $noti->id }}</th>
                                 <td>{{ $noti->descripcion }}</td>
-                                <td>{{ $noti->solicitante }}</td>
+                                <td>{{ $noti->receptor->name }}</td>
                                 <td>{{ $noti->created_at }}</td>
                                 <td>{{ $noti->estado }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-success btn-circle btn-md"><i class="fa fa-check"></i></button>
-                                    <button type="button" class="btn btn-info btn-circle btn-md"><i class="fa fa-clock"></i></button>
-                                    <button type="button" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times"></i></button>
+                                    <a type="button" href="/notificaiones/ver" class="btn btn-primary btn-circle btn-md"><i class="fa fa-eye" style="padding-top: 5px;"></i></a>
                                 </td>
                             </tr>
                             
@@ -91,3 +92,6 @@
 
 
 @endsection
+
+    
+    

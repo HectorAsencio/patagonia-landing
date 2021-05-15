@@ -57,7 +57,7 @@
                         </thead>
                         <tbody>
 
-                        @foreach ($team as $usuario)
+                        @foreach ($equipo as $usuario)
 
                             <tr>
                                 <td style="width:10%"><img src="assets/img/users/{{$usuario->avatar}}" style="width:50%"></img></td>

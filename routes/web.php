@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\NotificacionesController;
 use App\Http\UsuariosController;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Notificacion;
 
 use Illuminate\Support\Facades\DB;
 
@@ -25,58 +27,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// USUARIOS (LOGIN) //
-Route::get('usuarios', [UsuariosController::class, 'index']);
-
-// ELIMINAR DATOS DE SESIÓN
 Route::get('/logout', function (Request $request) {
 
-    $request->session()->flush();
-    return redirect('/');
+    Auth::logout();
+
+    $request->session()->invalidate();
+
+    $request->session()->regenerateToken();
+
+    return redirect('/login');
 
 })->name("logout");
 
 // NOTIFICACIONES //
-// LISTADO
-Route::get('/notificaciones', function (Request $request)
-{
-    $sesionArray = array('nombre' => $request->session()->get('nombre', 'Sin sesión'),'email' => $request->session()->get('email', 'Sin sesión'),'avatar' => $request->session()->get('avatar', 'Sin sesión'));
-    $sesionData = new ArrayObject($sesionArray);
-
-    $notificaciones =  DB::table('notificaciones')->get();
-
-    return view('notificaciones', ['notificaciones' => $notificaciones, 'sesionData' => $sesionData]);
-
-})->name("notificaciones");
-
-// CREAR NOTIFICACIÓN (GET)
-Route::get('/notificaciones/crear', function () {
-
-    $users =  DB::table('users')->get();
-
-    return view('crearNotificacion', ['users' => $users]);
-})->name("crearNotificacion");
+Route::get('/notificaciones', [App\Http\Controllers\NotificacionesController::class, 'index']);
+Route::get('/notificaciones/usuario', [App\Http\Controllers\NotificacionesController::class, 'mias']);
+Route::get('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'create']);
+Route::post('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'store']);
+Route::get('/notificaciones/actualizar/{id}/{cambio}', [App\Http\Controllers\NotificacionesController::class, 'update']);
 
 // EQUIPO //
-// LISTADO
-Route::get('/equipo', function (Request $request) 
-{
-    $sesionArray = array('nombre' => $request->session()->get('nombre', 'Sin sesión'),'email' => $request->session()->get('email', 'Sin sesión'),'avatar' => $request->session()->get('avatar', 'Sin sesión'));
-    $sesionData = new ArrayObject($sesionArray);
-
-    $team =  DB::table('users')->get();
-
-    return view('equipo', ['team' => $team, 'sesionData' => $sesionData]);
-});
-
-//Route::get('equipo', [UsuariosController::class, 'listaEquipo']);
-
-
-//CONFIGURACION//
-
-Route::get('/configuracion', function () {
-    return view('configuracion');
-});
+Route::get('/equipo', [App\Http\Controllers\UsuariosController::class, 'index']);
 
 // AUTENTICACIÓN
 Auth::routes();

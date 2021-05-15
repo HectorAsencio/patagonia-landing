@@ -90,9 +90,9 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="/notificaciones"> Notificaciones</a></li>
+                                        <li><a href="/notificaciones/usuario"> Mis notificaciones</a></li>
+                                        <li><a href="/notificaciones"> Notificaciones entrantes</a></li>
                                         <li><a href="/equipo">Equipo</a></li>
-                                        <li><a href="/configuracion">Configuración</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -107,6 +107,9 @@
 
                                     <img src="{{asset('assets/img/users/'.Auth::user()->avatar)}}"
                                         style="width:30px;margin-right: 5px;border-radius: 100%;border: 2px solid;">
+
+                                    <span class="badge bg-danger">9</span>
+
                                 </button>
                                 <ul class="dropdown-menu" role="menu"
                                     style="margin-top: 0px; padding: 15px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 48px, 0px);"

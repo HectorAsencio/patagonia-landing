@@ -26,6 +26,10 @@
 
                             @csrf
 
+                            @if(Session::has('datosIncorrectosMsg'))
+                                {{Session::get('datosIncorrectosMsg')}}
+                            @endif
+
                             <div class="form-group row">
                                 <label for="titulo" class="col-md-4 col-form-label text-md-right">{{ __('Titulo')
                                     }}</label>
@@ -43,8 +47,8 @@
 
                                 <div class="col-md-6">
                                     <textarea id="descripcion" type="descripcion"
-                                        class="form-control @error('password') is-invalid @enderror" name="password" required
-                                        required autocomplete="current-password"></textarea>
+                                        class="form-control @error('password') is-invalid @enderror" name="descripcion" required
+                                        required></textarea>
                                 </div>
                             </div>
 
