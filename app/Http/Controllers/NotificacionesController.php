@@ -63,11 +63,11 @@ class NotificacionesController extends Controller
             $datosInvalidos = true;
         }
         if (strlen($request->descripcion)<10){
-            Session::flash('datosIncorrectosAsunto', 'El asunto debe tener como mínimo 10 caracteres');
+            Session::flash('datosIncorrectosAsunto', 'La descripción debe tener como mínimo 10 caracteres');
             $datosInvalidos = true;
         }
         if (strlen($request->descripcion)>200){
-            Session::flash('datosIncorrectosAsuntoMax', 'El asunto debe tener como máximo 200 caracteres');
+            Session::flash('datosIncorrectosAsuntoMax', 'La descripción debe tener como máximo 200 caracteres');
             $datosInvalidos = true;
         }
         if ($request->receptor=="Elegir"){
