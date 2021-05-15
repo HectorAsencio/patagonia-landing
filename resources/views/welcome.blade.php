@@ -3,7 +3,7 @@
 @section('content')
   
   <!-- Slider Area Start-->
-        <div class="slider-area ">
+        <div class="slider-area" style="margin-top:-150px">
             <div class="slider-active">
                 <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.png">
                     <div class="container">

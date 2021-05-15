@@ -58,7 +58,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Descripción</th>
+                                <th scope="col">Título</th>
                                 <th scope="col">Solicitante</th>
                                 <th scope="col">Fecha</th>
                                 <th scope="col">Estado</th>
@@ -70,7 +70,7 @@
 
                             <tr>
                                 <th scope="row">{{ $noti->id }}</th>
-                                <td>{{ $noti->descripcion }}</td>
+                                <td>{{ $noti->titulo }}</td>
                                 <td>{{ $noti->solicitante->name }}</td>
                                 <td>{{ $noti->created_at }}</td>
                                 <td>{{ $noti->estado }}</td>
