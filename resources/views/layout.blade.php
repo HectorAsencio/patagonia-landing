@@ -33,6 +33,11 @@
             
             <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
 
+            <link rel="stylesheet" href="{{asset('assets/css/jquery.dataTables.css') }}">
+
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+
    </head>
 
    <body>
@@ -274,6 +279,8 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="{{asset('assets/js/plugins.js')}}"></script>
         <script src="{{asset('assets/js/main.js')}}"></script>
+
+        <script src="{{asset('assets/js/jquery.dataTables.js') }}"></script>
 
     </body>
 </html>

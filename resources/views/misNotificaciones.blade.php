@@ -44,6 +44,12 @@
 
 </style>
 
+<script>
+    $(document).ready( function () {
+        $('#misNotificacionesTable').DataTable();
+    } );
+</script>
+
     <!-- ================ contact section start ================= -->
     <section class="contact-section">
             <div class="container">
@@ -55,7 +61,7 @@
                     </div>
                     <div class="col-lg-12" style="margin-top:20px">
 
-                    <table class="table">
+                    <table class="table" id="misNotificacionesTable">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
