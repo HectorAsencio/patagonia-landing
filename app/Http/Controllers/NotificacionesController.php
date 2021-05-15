@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\Session;
+
+use App\Models\Notificacion;
+
 class NotificacionesController extends Controller
 
 {
@@ -13,14 +19,15 @@ class NotificacionesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, $id)
+    public function index(Request $request)
     {
-        $value = $request->session()->get('key');
-        
-        $data =  DB::table('notificaciones')->get();
-
-        return view('notificaciones', ['data' => $data, 'value' => $value]);
-
+        $notificaciones = Notificacion::where('receptor_id', Auth::id())->get();
+        return view('notificaciones', ['notificaciones' => $notificaciones]);
+    }
+    public function mias(Request $request)
+    {
+        $notificaciones = Notificacion::where('solicitante_id', Auth::id())->get();
+        return view('misNotificaciones', ['notificaciones' => $notificaciones]);
     }
 
     /**
@@ -28,9 +35,13 @@ class NotificacionesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        
+        $users =  DB::table('users')->get();
+
+        $flashMsg = $request->session()->flash('status');
+
+        return view('crearNotificacion', ['users' => $users, 'flash' => $flashMsg]);
     }
 
     /**
@@ -41,7 +52,22 @@ class NotificacionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validate the request...
+
+        if(strlen($request->titulo)<4){
+            Session::flash('datosIncorrectosMsg', 'El título debe tener como mínimo 4 caracteres');
+            return redirect("/notificaciones/crear");
+        }
+
+        $notificacion = Notificacion::create([
+            'titulo' => $request->titulo,
+            'descripcion' => $request->descripcion,
+            'solicitante_id' => Auth::id(),
+            'receptor_id' => $request->receptor,
+            'motivo' => "N/A",
+        ]);
+
+        return redirect("/notificaciones/usuario");
     }
 
     /**
@@ -73,9 +99,33 @@ class NotificacionesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $cambio)
     {
-        //
+        $notificacion = Notificacion::find($id);
+
+        if ($cambio=="aprobar"){
+
+            $notificacion->estado = "Aprobado";
+
+        }
+
+        else if ($cambio=="rechazar"){
+
+            $notificacion->estado = "Rechazado";
+
+        }
+
+        else {
+
+            $notificacion->estado = "Pendiente";
+
+        }
+
+        $notificacion->respondido_at = new \DateTime();
+
+        $notificacion->save();
+
+        return redirect("/notificaciones");
     }
 
     /**

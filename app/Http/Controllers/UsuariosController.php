@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class UsuariosController extends Controller
 
@@ -16,17 +17,9 @@ class UsuariosController extends Controller
     public function index()
     {
         
-        $data =  DB::table('usuarios')->get();
+        $equipo =  User::all();
 
-        return view('usuarios', ['data' => $data]);
-
-    }
-    public function listaEquipo()
-    {
-        
-        $team =  DB::table('usuarios')->get();
-
-        return view('equipo', ['team' => $team]);
+        return view('/equipo', ['equipo' => $equipo]);
 
     }
 

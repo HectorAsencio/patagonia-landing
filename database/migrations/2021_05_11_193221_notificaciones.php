@@ -28,12 +28,11 @@ class Notificaciones extends Migration
             $table->text('titulo');
             $table->longText('descripcion');
 
-            $table->string('estado');
-
-            $table->date('creado_at');
-            $table->date('respondido_at');
-
+            $table->string('estado')->default("Nueva");
+            $table->date('respondido_at')->default("2010-10-10");
             $table->longText('motivo');
+
+            $table->timestamps();
 
         });
     }
