@@ -25,14 +25,24 @@
                         <form method="POST" action="/notificaciones/crear">
 
                             @csrf
-
-                            @if(Session::has('datosIncorrectosMsg'))
-                                {{Session::get('datosIncorrectosMsg')}}
+                            @if(Session::has('datosIncorrectosMsg')) 
+                                <p style="text-align:center;"><strong class="col-md-6" style="color:red;">{{Session::get('datosIncorrectosMsg')}}</strong></p><br>
+                            @endif
+                            @if(Session::has('datosIncorrectosTitulo')) 
+                                <p style="text-align:center;"><strong class="col-md-6" style="color:red;">{{Session::get('datosIncorrectosTitulo')}}</strong></p><br>
+                            @endif
+                            @if(Session::has('datosIncorrectosAsunto'))
+                                <p style="text-align:center;"><strong class="col-md-6" style="color:red;">{{Session::get('datosIncorrectosAsunto')}}</strong></p><br>
+                            @endif
+                            @if(Session::has('datosIncorrectosAsuntoMax'))
+                                <p style="text-align:center;"><strong class="col-md-6" style="color:red;">{{Session::get('datosIncorrectosAsuntoMax')}}</strong></p><br>
+                            @endif
+                            @if(Session::has('datosIncorrectosReceptor'))
+                                <p style="text-align:center;"><strong class="col-md-6" style="color:red;">{{Session::get('datosIncorrectosReceptor')}}</strong></p><br>
                             @endif
 
                             <div class="form-group row">
-                                <label for="titulo" class="col-md-4 col-form-label text-md-right">{{ __('Titulo')
-                                    }}</label>
+                                <label for="titulo" class="col-md-4 col-form-label text-md-right">{{ __('Titulo')}}</label>
 
                                 <div class="col-md-6">
                                     <input id="titulo" type="titulo"
@@ -58,7 +68,7 @@
 
                                 <div class="col-md-6">
                                     <select id="receptor" name="receptor" required>
-                                        <option value="">Elegir...</option>
+                                        <option value="Elegir">Elegir...</option>
                                         @foreach ($users as $user)
                                         <option value="{{ $user->id }}">{{ $user->name }}</option>
                                         @endforeach

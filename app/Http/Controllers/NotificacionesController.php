@@ -52,10 +52,30 @@ class NotificacionesController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate the request...
+        $datosInvalidos = false;
 
-        if(strlen($request->titulo)<4){
+        if (strlen($request->titulo)<4){
             Session::flash('datosIncorrectosMsg', 'El título debe tener como mínimo 4 caracteres');
+            $datosInvalidos = true;
+        }
+        if (strlen($request->titulo)>20){
+            Session::flash('datosIncorrectosTitulo', 'El título debe tener como máximo 20 caracteres');
+            $datosInvalidos = true;
+        }
+        if (strlen($request->descripcion)<10){
+            Session::flash('datosIncorrectosAsunto', 'El asunto debe tener como mínimo 10 caracteres');
+            $datosInvalidos = true;
+        }
+        if (strlen($request->descripcion)>200){
+            Session::flash('datosIncorrectosAsuntoMax', 'El asunto debe tener como máximo 200 caracteres');
+            $datosInvalidos = true;
+        }
+        if ($request->receptor=="Elegir"){
+            Session::flash('datosIncorrectosReceptor', 'Debe seleccionar un receptor');
+            $datosInvalidos = true;
+        }
+
+        if ($datosInvalidos) {
             return redirect("/notificaciones/crear");
         }
 
