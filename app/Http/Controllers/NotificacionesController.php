@@ -92,7 +92,7 @@ class NotificacionesController extends Controller
             'motivo' => "N/A",
         ]);
 
-        return redirect("/notificaciones/usuario");
+        return redirect("/misnotificaciones");
     }
 
     /**
