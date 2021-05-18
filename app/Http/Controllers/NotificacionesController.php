@@ -29,6 +29,11 @@ class NotificacionesController extends Controller
         $notificaciones = Notificacion::where('solicitante_id', Auth::id())->get();
         return view('misNotificaciones', ['notificaciones' => $notificaciones]);
     }
+    /*public function ver(Request $request)
+    {
+        $notificaciones = Notificacion::where('solicitante_id', Auth::id())->get();
+        return view('verNotificacion', ['notificaciones' => $notificaciones]);
+    }*/
 
     /**
      * Show the form for creating a new resource.
@@ -63,11 +68,11 @@ class NotificacionesController extends Controller
             $datosInvalidos = true;
         }
         if (strlen($request->descripcion)<10){
-            Session::flash('datosIncorrectosAsunto', 'El asunto debe tener como mínimo 10 caracteres');
+            Session::flash('datosIncorrectosAsunto', 'La descripción debe tener como mínimo 10 caracteres');
             $datosInvalidos = true;
         }
         if (strlen($request->descripcion)>200){
-            Session::flash('datosIncorrectosAsuntoMax', 'El asunto debe tener como máximo 200 caracteres');
+            Session::flash('datosIncorrectosAsuntoMax', 'La descripción debe tener como máximo 200 caracteres');
             $datosInvalidos = true;
         }
         if ($request->receptor=="Elegir"){
@@ -98,7 +103,9 @@ class NotificacionesController extends Controller
      */
     public function show($id)
     {
-        //
+        $notificacion = Notificacion::find($id);
+
+        return view('verNotificacion', ['notificacion' => $notificacion]);
     }
 
     /**

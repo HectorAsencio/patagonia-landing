@@ -45,6 +45,8 @@ Route::get('/notificaciones/usuario', [App\Http\Controllers\NotificacionesContro
 Route::get('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'create']);
 Route::post('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'store']);
 Route::get('/notificaciones/actualizar/{id}/{cambio}', [App\Http\Controllers\NotificacionesController::class, 'update']);
+//Route::get('/verNotificacion', [App\Http\Controllers\NotificacionesController::class, 'ver']);
+Route::get('/verNotificacion/{id}', [App\Http\Controllers\NotificacionesController::class, 'show']);
 
 // EQUIPO //
 Route::get('/equipo', [App\Http\Controllers\UsuariosController::class, 'index']);

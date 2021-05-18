@@ -46,7 +46,7 @@
 
                                 <div class="col-md-6">
                                     <input id="titulo" type="titulo"
-                                        class="form-control @error('titulo') is-invalid @enderror" name="titulo" required
+                                        class="form-control @error('titulo') is-invalid @enderror" minlength="4" maxlength="20" name="titulo" required
                                         value="{{ old('titulo') }}" required autocomplete="titulo" autofocus>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                                     }}</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="descripcion" type="descripcion"
+                                    <textarea id="descripcion" type="descripcion" minlength="10" maxlength="200"
                                         class="form-control @error('password') is-invalid @enderror" name="descripcion" required
                                         required></textarea>
                                 </div>
