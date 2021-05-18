@@ -44,6 +44,12 @@
 
 </style>
 
+<script>
+    $(document).ready( function () {
+        $('#notificacionesTable').DataTable();
+    } );
+</script>
+
     <!-- ================ contact section start ================= -->
     <section class="contact-section">
             <div class="container">
@@ -54,7 +60,7 @@
                     </div>
                     <div class="col-lg-12" style="margin-top:20px">
 
-                    <table class="table">
+                    <table class="table" id="notificacionesTable">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -81,7 +87,7 @@
                                     <a type="button" href="/notificaciones/actualizar/{{ $noti->id}}/pendiente" class="btn btn-info btn-circle btn-md"><i class="fa fa-clock" style="padding-top: 5px;"></i></a>
                                     <a type="button" href="/notificaciones/actualizar/{{ $noti->id}}/rechazar"class="btn btn-danger btn-circle btn-md"><i class="fa fa-times" style="padding-top: 5px;"></i></a>
                                 @endif
-                                    <a type="button" href="/verNotificacion/{{ $noti->id }}" class="btn btn-primary btn-circle btn-md"><i class="fa fa-eye" style="padding-top: 5px;"></i></a>
+                                    <a type="button" href="/notificaciones/{{ $noti->id }}" class="btn btn-primary btn-circle btn-md"><i class="fa fa-eye" style="padding-top: 5px;"></i></a>
                                 </td>
                             </tr>
                             
