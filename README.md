@@ -36,7 +36,7 @@ Marcelo Carreño       |  Developer     | Diseño navegación principal , Adapta
 Hector Asencio        |  Developer     | Diseño header, sección "Tecnologías", sección "Contacto"
 
 ## **Demo del Landing Page NotifyBoard**
-- [Link Heroku](http://mighty-taiga-25832.herokuapp.com)
+- [Link a Demo](http://mighty-taiga-25832.herokuapp.com)
 
 ## **Instrucciones de instalación**
 
