@@ -46,7 +46,12 @@
 
 <script>
     $(document).ready( function () {
-        $('#notificacionesTable').DataTable();
+        $('#notificacionesTable').DataTable( {
+            rowReorder: {
+                selector: 'td:nth-child(1)'
+            },
+            responsive: true
+        } );
     } );
 </script>
 

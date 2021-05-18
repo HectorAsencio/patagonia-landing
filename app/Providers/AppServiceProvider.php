@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Notificacion;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +26,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // The user is logged in...
+        //$nNotificacionesPorResponder = Notificacion::where('receptor_id', Auth::id())->where('estado', 'Nueva')->count();
+        //View::share('nNotificacionesPorResponder', $nNotificacionesPorResponder);
+        
     }
 }

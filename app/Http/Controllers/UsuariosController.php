@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
 class UsuariosController extends Controller
@@ -16,10 +15,11 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        
         $equipo =  User::all();
 
-        return view('/equipo', ['equipo' => $equipo]);
+        return view('/equipo', [
+            'equipo' => $equipo,
+            ]);
 
     }
 
@@ -50,9 +50,11 @@ class UsuariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function perfil($id)
     {
-        //
+        $usuario = User::find($id);
+
+        return view('perfil', ['usuario' => $usuario]);
     }
 
     /**

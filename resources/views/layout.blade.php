@@ -5,7 +5,8 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>NotifyBoard</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 
 		<link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.png')}}">
@@ -33,9 +34,21 @@
             
             <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
 
-            <link rel="stylesheet" href="{{asset('assets/css/jquery.dataTables.css') }}">
+            <!--
+            <link rel="stylesheet" href="{{asset('assets/css/jquery.dataTables.css') }}">-->
+            <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+            <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.dataTables.min.css">
+            <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css">
 
             <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+            
+            <style>
+                .paginate_button .current {
+                    background: linear-gradient(to bottom, #4ad0ff, #3a59ca 100%)!important;
+                    color: white !important;
+                    border: 0px;
+                }
+            </style>
 
 
    </head>
@@ -90,7 +103,7 @@
                             </div>
                         </div>
                         @else
-                        <div class="col-xl-6 col-lg-8 col-md-8">
+                        <div class="col-xl-7 col-lg-8 col-md-8">
                             <!-- Main-menu -->
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
@@ -102,8 +115,19 @@
                                 </nav>
                             </div>
                         </div>
+
+                        <style>
+                            @media screen and (max-width: 600px) {
+                                .my-menu {
+                                    visibility: hidden;
+                                    clear: both;
+                                    display: none;
+                                }
+                            }
+                        </style>
+
                         <div class="col-xl-3 col-lg-2 col-md-2">
-                            <div class="btn-group show-on-hover" style="margin-top: -25px;position: absolute;right: 10%;">
+                            <div class="btn-group show-on-hover my-menu" style="margin-top: -25px;position: absolute;right: 10%;">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                                     style="padding: 9px;font-size: 18px;background-color: #021A8E;"
                                     aria-expanded="false">
@@ -113,16 +137,19 @@
                                     <img src="{{asset('assets/img/users/'.Auth::user()->avatar)}}"
                                         style="width:30px;margin-right: 5px;border-radius: 100%;border: 2px solid;">
 
-                                    <span class="badge bg-danger">9</span>
+                                        @if ($nNotificacionesPorResponder > 0)
+                                        <span class="badge bg-danger">{{$nNotificacionesPorResponder}}</span>
+                                        @else
+                                        @endif
 
                                 </button>
                                 <ul class="dropdown-menu" role="menu"
                                     style="margin-top: 0px; padding: 15px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 48px, 0px);"
                                     x-placement="bottom-start">
-                                    <li><a class="btn btn-primary btn-block" href="/utps/perfil"
+                                    <li><a class="btn btn-primary btn-block" href="/perfil"
                                             style="color: #60ad5e;color:white;"><i style="margin-right: 5px;color:white;"
                                                 class="fa fa-user"></i> Perfil</a></li>
-                                    <li style="margin-top: 10px;"><a class="btn btn-primary btn-block" href="/users/faq"
+                                    <li style="margin-top: 10px;"><a class="btn btn-primary btn-block" href="/ayuda"
                                             style="color: #60ad5e;color:white;"><i style="margin-right: 5px;color:white;"
                                                 class="fa fa-question-circle"></i> Ayuda</a></li>
                                     <li class="divider"></li>
@@ -145,7 +172,7 @@
         <!-- Header End -->
     </header>
 
-    <main style="margin-top:150px">
+    <main style="margin-top:130px">
 
     @yield('content')
 
@@ -281,6 +308,8 @@
         <script src="{{asset('assets/js/main.js')}}"></script>
 
         <script src="{{asset('assets/js/jquery.dataTables.js') }}"></script>
+        <script src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
 
     </body>
 </html>
