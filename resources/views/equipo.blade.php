@@ -35,6 +35,12 @@
 
 </style>
 
+<script>
+    $(document).ready( function () {
+        $('#equipoTable').DataTable();
+    } );
+</script>
+
     <!-- ================ contact section start ================= -->
     <section class="contact-section">
             <div class="container">
@@ -62,8 +68,8 @@
                             <tr>
                                 <td style="width:10%"><img src="assets/img/users/{{$usuario->avatar}}" style="width:50%"></img></td>
                                 <td>{{$usuario->name}}</td>
-                                <td>???</td>
-                                <td>???</td>
+                                <td>{{$usuario->cargo}}</td>
+                                <td>{{$usuario->telefono}}</td>
                                 <td>{{$usuario->email}}</td>
                             </tr>
 

@@ -83,7 +83,7 @@
                                 <td>{{ $noti->created_at }}</td>
                                 <td>{{ $noti->estado }}</td>
                                 <td>
-                                    <a type="button" href="/notificaciones/{{$noti->id}}" class="btn btn-primary btn-circle btn-md"><i class="fa fa-eye" style="padding-top: 5px;"></i></a>
+                                    <a type="button" href="/notificaciones/{{ $noti->id }}" class="btn btn-primary btn-circle btn-md"><i class="fa fa-eye" style="padding-top: 5px;"></i></a>
                                 </td>
                             </tr>
                             
