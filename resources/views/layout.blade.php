@@ -95,7 +95,7 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="/notificaciones/usuario"> Mis notificaciones</a></li>
+                                        <li><a href="/misnotificaciones"> Mis notificaciones</a></li>
                                         <li><a href="/notificaciones"> Notificaciones entrantes</a></li>
                                         <li><a href="/equipo">Equipo</a></li>
                                     </ul>

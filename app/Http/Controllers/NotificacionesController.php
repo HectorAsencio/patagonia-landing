@@ -105,7 +105,7 @@ class NotificacionesController extends Controller
     {
         $notificacion = Notificacion::find($id);
 
-        return view('verNotificacion', ['notificacion' => $notificacion]);
+        return view('vistaDetalle', ['notificacion' => $notificacion]);
     }
 
     /**
