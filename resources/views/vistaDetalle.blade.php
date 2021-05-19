@@ -71,18 +71,22 @@
             </div>
         </div>
         <div>
-        @if ($notificacion->estado=="Nueva")
+            
             <div class="col text-center" style="margin-top: 2%;">
                 <tr>
                     <p><strong>Acciones:</strong></p>
                     <br>
+                    @if ($notificacion->estado=="Nueva")
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/aprobar" class="btn btn-success btn-circle btn-md"><i class="fa fa-check" style="padding-top: 5px;"></i></a>
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/pendiente" class="btn btn-info btn-circle btn-md"><i class="fa fa-clock" style="padding-top: 5px;"></i></a>
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/rechazar" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times" style="padding-top: 5px;"></i></a>
+                    @elseif ($notificacion->estado=="Pendiente")
+                    <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/aprobar" class="btn btn-success btn-circle btn-md"><i class="fa fa-check" style="padding-top: 5px;"></i></a>
+                    <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/rechazar" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times" style="padding-top: 5px;"></i></a>
                     </td>
                 </tr>
+                    @endif
             </div>
-        @endif
         </div>
 </section>
 
