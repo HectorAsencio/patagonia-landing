@@ -57,6 +57,13 @@ class UsuariosController extends Controller
         return view('perfil', ['usuario' => $usuario]);
     }
 
+    public function ayuda($id)
+    {
+        $usuario = User::find($id);
+
+        return view('ayuda', ['usuario' => $usuario]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
