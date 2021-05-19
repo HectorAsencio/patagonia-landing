@@ -146,10 +146,10 @@
                                 <ul class="dropdown-menu" role="menu"
                                     style="margin-top: 0px; padding: 15px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 48px, 0px);"
                                     x-placement="bottom-start">
-                                    <li><a class="btn btn-primary btn-block" href="/perfil"
+                                    <li><a class="btn btn-primary btn-block" href="/perfil/{{ Auth::user()->id }}"
                                             style="color: #60ad5e;color:white;"><i style="margin-right: 5px;color:white;"
                                                 class="fa fa-user"></i> Perfil</a></li>
-                                    <li style="margin-top: 10px;"><a class="btn btn-primary btn-block" href="/ayuda"
+                                    <li style="margin-top: 10px;"><a class="btn btn-primary btn-block" href="/ayuda/{{ Auth::user()->id }}"
                                             style="color: #60ad5e;color:white;"><i style="margin-right: 5px;color:white;"
                                                 class="fa fa-question-circle"></i> Ayuda</a></li>
                                     <li class="divider"></li>
