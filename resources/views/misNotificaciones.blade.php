@@ -46,7 +46,12 @@
 
 <script>
     $(document).ready( function () {
-        $('#misNotificacionesTable').DataTable();
+        $('#misNotificacionesTable').DataTable( {
+            rowReorder: {
+                selector: 'td:nth-child(1)'
+            },
+            responsive: true
+        } );
     } );
 </script>
 
@@ -61,7 +66,7 @@
                     </div>
                     <div class="col-lg-12" style="margin-top:20px">
 
-                    <table class="table" id="misNotificacionesTable">
+                    <table class="display nowrap" id="misNotificacionesTable" style="width:100%">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -83,7 +88,7 @@
                                 <td>{{ $noti->created_at }}</td>
                                 <td>{{ $noti->estado }}</td>
                                 <td>
-                                    <a type="button" href="/verNotificacion/{{ $noti->id }}" class="btn btn-primary btn-circle btn-md"><i class="fa fa-eye" style="padding-top: 5px;"></i></a>
+                                    <a type="button" href="/notificaciones/{{ $noti->id }}" class="btn btn-primary btn-circle btn-md"><i class="fa fa-eye" style="padding-top: 5px;"></i></a>
                                 </td>
                             </tr>
                             

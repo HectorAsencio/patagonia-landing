@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
-
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Support\Facades\Session;
 
 use App\Models\Notificacion;
@@ -22,18 +21,21 @@ class NotificacionesController extends Controller
     public function index(Request $request)
     {
         $notificaciones = Notificacion::where('receptor_id', Auth::id())->get();
-        return view('notificaciones', ['notificaciones' => $notificaciones]);
+
+        $nNotificacionesXResponder = Notificacion::where('receptor_id', Auth::id())->where('estado', 'Nueva')->count();
+
+        return view('notificaciones', [
+            'notificaciones' => $notificaciones, 
+            'nNotificacionesXResponder' => $nNotificacionesXResponder, 
+            ]);
     }
     public function mias(Request $request)
     {
         $notificaciones = Notificacion::where('solicitante_id', Auth::id())->get();
-        return view('misNotificaciones', ['notificaciones' => $notificaciones]);
+        return view('misNotificaciones', [
+            'notificaciones' => $notificaciones, 
+            ]);
     }
-    /*public function ver(Request $request)
-    {
-        $notificaciones = Notificacion::where('solicitante_id', Auth::id())->get();
-        return view('verNotificacion', ['notificaciones' => $notificaciones]);
-    }*/
 
     /**
      * Show the form for creating a new resource.
@@ -46,7 +48,10 @@ class NotificacionesController extends Controller
 
         $flashMsg = $request->session()->flash('status');
 
-        return view('crearNotificacion', ['users' => $users, 'flash' => $flashMsg]);
+        return view('crearNotificacion', [
+            'users' => $users, 
+            'flash' => $flashMsg
+            ]);
     }
 
     /**
@@ -92,7 +97,7 @@ class NotificacionesController extends Controller
             'motivo' => "N/A",
         ]);
 
-        return redirect("/notificaciones/usuario");
+        return redirect("/misnotificaciones");
     }
 
     /**
@@ -105,7 +110,9 @@ class NotificacionesController extends Controller
     {
         $notificacion = Notificacion::find($id);
 
-        return view('verNotificacion', ['notificacion' => $notificacion]);
+        return view('vistaDetalle', [
+            'notificacion' => $notificacion,
+            ]);
     }
 
     /**

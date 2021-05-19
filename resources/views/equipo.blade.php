@@ -90,6 +90,7 @@
  <section class="contact-section">
     <div class="container">
 
+
         <div class="row">
             <div class="col-12">
                 <h2 class="contact-title">Equipo de trabajo</h2>
@@ -108,18 +109,7 @@
                             <p> <small class="text-muted"> Email: email@email.com</small> </p>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="card col-md-3 mt-100">
-                <div class="card-content">
-                    <div class="card-body p-0">
-                        <div class="profile text-center" > <img src="assets/img/users/default.png"> </div>
-                        <br>
-                        <div class="card-title">Hector Asencio<br /> <small>Developer</small> </div>
-                        <div class="card-subtitle">
-                            <p> <small class="text-muted"> Teléfono: +56 999999999</small> </p>
-                            <p> <small class="text-muted"> Email: email@email.com</small> </p>
-                        </div>
+
                     </div>
                 </div>
             </div>
