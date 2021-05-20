@@ -137,10 +137,11 @@
                                     <img src="{{asset('assets/img/users/'.Auth::user()->avatar)}}"
                                         style="width:30px;margin-right: 5px;border-radius: 100%;border: 2px solid;">
 
-                                        @if ($nNotificacionesPorResponder > 0)
-                                        <span class="badge bg-danger">{{$nNotificacionesPorResponder}}</span>
-                                        @else
-                                        @endif
+
+                                            @if ($nNotificacionesPorResponder > 0)
+                                            <span class="badge bg-danger">{{$nNotificacionesPorResponder}}</span>
+                                            @else
+                                            @endif
 
                                 </button>
                                 <ul class="dropdown-menu" role="menu"
