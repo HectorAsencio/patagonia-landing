@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 // INICIO
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('noti');
 
 // SISTEMA WEB //
 // NOTIFICACIONES //
@@ -37,7 +37,6 @@ Route::get('/ayuda/{id}', [App\Http\Controllers\UsuariosController::class, 'ayud
 
 // AUTENTICACIÓN
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout', function (Request $request) {
     Auth::logout();
     $request->session()->invalidate();
