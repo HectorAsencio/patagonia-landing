@@ -61,7 +61,7 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="contact-title">Notificaciones entrantes</h2>
+                        <h2 class="contact-title">Bandeja de Entrada</h2>
                     </div>
                     <div class="col-lg-12" style="margin-top:20px">
 

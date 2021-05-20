@@ -97,75 +97,31 @@
             </div>
             
         </div>
+        @foreach ($equipo->chunk(3) as $items )
         <div class="row" style="justify-content: center">
+        @foreach($items as $item)
+
             <div class="card col-md-3 mt-100">
                 <div class="card-content">
                     <div class="card-body p-0">
                         <div class="profile text-center" > <img src="assets/img/users/default.png"> </div>
                         <br>
-                        <div class="card-title"> Leticia Palazuelos<br /> <small>Scrum Master</small> </div>
+                        <div class="card-title"> {{$item-> name}}<br /> <small>Cargo: {{$item-> cargo}}</small> </div>
                         <div class="card-subtitle">
-                            <p> <small class="text-muted"> Teléfono: +56 999999999</small> </p>
-                            <p> <small class="text-muted"> Email: email@email.com</small> </p>
+                            <p> <small class="text-muted"> Teléfono: {{$item-> telefono}}</small> </p>
+                            <p> <small class="text-muted"> Email: {{$item-> email}}</small> </p>
                         </div>
                     </div>
 
                 </div>
             </div>
-            <div class="card col-md-3 mt-100">
-                <div class="card-content">
-                    <div class="card-body p-0">
-                        <div class="profile text-center" > <img src="assets/img/users/default.png"> </div>
-                        <br>
-                        <div class="card-title"> Héctor Asencio<br /> <small>Developer</small> </div>
-                        <div class="card-subtitle">
-                            <p> <small class="text-muted"> Teléfono: +56 999999999</small> </p>
-                            <p> <small class="text-muted"> Email: email@email.com</small> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 mt-100">
-                <div class="card-content">
-                    <div class="card-body p-0">
-                        <div class="profile text-center" > <img src="assets/img/users/default.png"> </div>
-                        <br>
-                        <div class="card-title"> Marcelo Carreño<br /> <small>Developer</small> </div>
-                        <div class="card-subtitle">
-                            <p> <small class="text-muted"> Teléfono: +56 999999999</small> </p>
-                            <p> <small class="text-muted"> Email: email@email.com</small> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 mt-100">
-                <div class="card-content">
-                    <div class="card-body p-0">
-                        <div class="profile text-center" > <img src="assets/img/users/default.png"> </div>
-                        <br>
-                        <div class="card-title"> Kevin Briceño<br /> <small>Developer</small> </div>
-                        <div class="card-subtitle">
-                            <p> <small class="text-muted"> Teléfono: +56 999999999</small> </p>
-                            <p> <small class="text-muted"> Email: email@email.com</small> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-md-3 mt-100">
-                <div class="card-content">
-                    <div class="card-body p-0">
-                        <div class="profile text-center" > <img src="assets/img/users/default.png"> </div>
-                        <br>
-                        <div class="card-title"> ignacio Contreras<br /> <small>Developer</small> </div>
-                        <div class="card-subtitle">
-                            <p> <small class="text-muted"> Teléfono: +56 999999999</small> </p>
-                            <p> <small class="text-muted"> Email: email@email.com</small> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+            @endforeach
+            
             
         </div>
+        
+        @endforeach
     </div>
 </section>
    

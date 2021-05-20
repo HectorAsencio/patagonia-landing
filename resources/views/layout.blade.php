@@ -109,7 +109,7 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a href="/misnotificaciones"> Mis notificaciones</a></li>
-                                        <li><a href="/notificaciones"> Notificaciones entrantes</a></li>
+                                        <li><a href="/notificaciones">Bandeja De Entrada</a></li>
                                         <li><a href="/equipo">Equipo</a></li>
                                     </ul>
                                 </nav>
