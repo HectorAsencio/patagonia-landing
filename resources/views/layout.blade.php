@@ -124,6 +124,12 @@
                                     display: none;
                                 }
                             }
+                            .badge {
+                                
+                                border-radius: 10px 10px 10px 10px;
+                                color:white;
+                               
+                            }
                         </style>
 
                         <div class="col-xl-3 col-lg-2 col-md-2">

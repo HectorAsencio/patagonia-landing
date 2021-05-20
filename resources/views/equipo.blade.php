@@ -104,7 +104,7 @@
             <div class="card col-md-3 mt-100">
                 <div class="card-content">
                     <div class="card-body p-0">
-                        <div class="profile text-center" > <img src="assets/img/users/default.png"> </div>
+                        <div class="profile text-center" > <img src="assets/img/users/{{$item-> avatar}}"> </div>
                         <br>
                         <div class="card-title"> {{$item-> name}}<br /> <small>Cargo: {{$item-> cargo}}</small> </div>
                         <div class="card-subtitle">
