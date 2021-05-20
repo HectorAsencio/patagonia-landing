@@ -211,8 +211,7 @@
                             <div class="footer-tittle">
                                 <h4>Acceso rápido</h4>
                                 <ul>
-                                    <li><a href="#nosotros">Nosotros</a></li>
-                                    <li><a href="#contacto">Contacto</a></li>
+                                    <li><a href="/" target="_blank">Nosotros</a></li>
                                     <li><a href="https://www.softpatagonia.com" target="_blank">Patagonia</a></li>
                                 </ul>
                             </div>
