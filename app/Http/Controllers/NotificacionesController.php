@@ -25,15 +25,15 @@ class NotificacionesController extends Controller
         $nNotificacionesXResponder = Notificacion::where('receptor_id', Auth::id())->where('estado', 'Nueva')->count();
 
         return view('notificaciones', [
-            'notificaciones' => $notificaciones, 
-            'nNotificacionesXResponder' => $nNotificacionesXResponder, 
+            'notificaciones' => $notificaciones,
+            'nNotificacionesXResponder' => $nNotificacionesXResponder,
             ]);
     }
     public function mias(Request $request)
     {
         $notificaciones = Notificacion::where('solicitante_id', Auth::id())->get();
         return view('misNotificaciones', [
-            'notificaciones' => $notificaciones, 
+            'notificaciones' => $notificaciones,
             ]);
     }
 
@@ -49,8 +49,22 @@ class NotificacionesController extends Controller
         $flashMsg = $request->session()->flash('status');
 
         return view('crearNotificacion', [
-            'users' => $users, 
+            'users' => $users,
             'flash' => $flashMsg
+            ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createAPI(Request $request)
+    {
+        $users =  DB::table('users')->get();
+
+        return view('crearAPI', [
+            'users' => $users
             ]);
     }
 
@@ -171,5 +185,91 @@ class NotificacionesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function NotiUsuario($userId){
+        $notificaciones = Notificacion::where('solicitante_id', $userId)->get();
+        $data = [
+            'flag'=>'success',
+            'mensaje'=>'Notificaciones del usuario en calidad de solicitante',
+            'notificaciones'=>$notificaciones
+        ];
+        return response()->json($data, 200, [], JSON_NUMERIC_CHECK);
+    }
+
+    public function NotiBandeja($userId){
+        $notificaciones = Notificacion::where('receptor_id', $userId)->get();
+        $data = [
+            'flag'=>'success',
+            'mensaje'=>'Notificaciones del usuario en calidad de receptor',
+            'notificaciones'=>$notificaciones
+        ];
+        return response()->json($data, 200, [], JSON_NUMERIC_CHECK);
+    }
+
+    public function Actualizar($notiId, $accion){ // aprobar / rechazar
+
+        // Buscamos objeto de notificación
+        $notificacion = Notificacion::find($notiId);
+
+        if ($notificacion == NULL){
+            $data = ['flag'=>'failure', 'mensaje'=>'No se encontró la notififación ingresada'];
+            return response()->json($data, 404, [], JSON_NUMERIC_CHECK);
+        }
+
+        // SI accion == aprobar -> estado = Aprobado
+        // SI accion == rechazar -> estado = Rechazado
+        if ($accion=="aprobar"){
+            $notificacion->estado = "Aprobado";
+        }
+        else if ($accion=="rechazar"){
+            $notificacion->estado = "Rechazado";
+        }
+        else{
+            return response()->json(['flag'=>'failure', 'mensaje'=>'Ingrese una acción correcta (aprobar / rechazar)'], 400, [], JSON_NUMERIC_CHECK);
+        }
+
+        // Actualizar fecha de respuesta
+        $notificacion->respondido_at = new \DateTime();
+
+        // Guardar documento editado en base de datos
+        $notificacion->save();
+
+        // Retornar JSON
+        $data = ['flag'=>'success', 'mensaje'=>'Notificación actualizada exitosamente'];
+        return response()->json($data, 200, [], JSON_NUMERIC_CHECK);
+    }
+
+    public function crear(Request $request){
+        try{
+            if (strlen($request->titulo)<4){
+                return response()->json(['flag'=>'failure', 'mensaje'=>'El título debe tener como mínimo 4 caracteres'], 400, [], JSON_NUMERIC_CHECK);
+            }
+            if (strlen($request->titulo)>20){
+                return response()->json(['flag'=>'failure', 'mensaje'=>'El título debe tener como máximo 20 caracteres'], 400, [], JSON_NUMERIC_CHECK);
+            }
+            if (strlen($request->descripcion)<10){
+                return response()->json(['flag'=>'failure', 'mensaje'=>'La descripción debe tener como mínimo 10 caracteres'], 200, [], JSON_NUMERIC_CHECK);
+            }
+            if (strlen($request->descripcion)>200){
+                return response()->json(['flag'=>'failure', 'mensaje'=>'La descripción debe tener como máximo 200 caracteres'], 200, [], JSON_NUMERIC_CHECK);
+            }
+            if ($request->receptor=="Elegir"){
+                return response()->json(['flag'=>'failure', 'mensaje'=>'Debe seleccionar un receptor'], 200, [], JSON_NUMERIC_CHECK);
+            }
+
+            $notificacion = Notificacion::create([
+                'titulo' => $request->titulo,
+                'descripcion' => $request->descripcion,
+                'solicitante_id' => $request->solicitante,
+                'receptor_id' => $request->receptor,
+                'motivo' => "N/A",
+            ]);
+
+            return response()->json(['flag'=>'success', 'mensaje'=>'Notificación creada exitosamente'], 200, [], JSON_NUMERIC_CHECK);
+        } catch (\Exception $e) {
+            return response()->json(['flag'=>'failure', 'mensaje'=>$e->getMessage()], 200, []);
+        }
+
     }
 }

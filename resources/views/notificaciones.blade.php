@@ -98,7 +98,7 @@
                                     <a type="button" href="/notificaciones/{{ $noti->id }}" class="btn btn-primary btn-circle btn-md"><i class="fa fa-eye" style="padding-top: 5px;"></i></a>
                                 </td>
                             </tr>
-                            
+
                             @endforeach
                         </tbody>
                     </table>
@@ -110,6 +110,3 @@
 
 
 @endsection
-
-    
-    

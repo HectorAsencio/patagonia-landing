@@ -21,7 +21,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('notificaciones', function() {
-    // If the Content-Type and Accept headers are set to 'application/json', 
+    // If the Content-Type and Accept headers are set to 'application/json',
     // this will return a JSON structure. This will be cleaned up later.
-    return Notificaciones::all();
+    return Notificacion::all();
 });
+
+Route::get('/notificaciones/mias/{userId}', [App\Http\Controllers\NotificacionesController::class, 'NotiUsuario']);
+
+Route::get('/notificaciones/bandeja/{userId}', [App\Http\Controllers\NotificacionesController::class, 'NotiBandeja']);
+
+Route::get('/notificaciones/notificacion/{notiId}/{accion}', [App\Http\Controllers\NotificacionesController::class, 'Actualizar']);
+
+Route::get('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'createAPI']);
+Route::post('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'crear']);
