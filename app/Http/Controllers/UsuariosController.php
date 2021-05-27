@@ -30,7 +30,7 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -97,4 +97,7 @@ class UsuariosController extends Controller
     {
         //
     }
+
+
+
 }
