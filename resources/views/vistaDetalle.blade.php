@@ -63,8 +63,8 @@
                 <br>
                 <h5>Datos Adicionales</h5>
 
-                <li class="list-group-item"><strong>Solicitante: </strong>{{ $notificacion->solicitante_id}}</li>
-                <li class="list-group-item"><strong>Receptor: </strong>{{ $notificacion->receptor_id}}</li>
+                <li class="list-group-item"><strong>Solicitante: </strong>{{ $notificacion->solicitante->name}}</li>
+                <li class="list-group-item"><strong>Receptor: </strong>{{ $notificacion->receptor->name}}</li>
                 <li class="list-group-item"><strong>Estado: </strong>{{ $notificacion->estado}}</li>
                 <li class="list-group-item"><strong>Motivo: </strong>{{ $notificacion->motivo}}</li>
                 <li class="list-group-item"><strong>Respondido: </strong>{{ $notificacion->respondido_at}}</li>
