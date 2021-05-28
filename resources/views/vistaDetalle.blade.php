@@ -53,12 +53,12 @@
         <div class="row">
             <div class="col-12">
                 <div class=" col text-right">
-                    <h2>Detalle de Notificacion</h2>
+                    <h2>Detalle de Notificación</h2>
                 </div>
                 <h4>Título</h4>
                 <li class="list-group-item">{{ $notificacion->titulo}}</li>
                 <br>
-                <h4>Descripcion</h4>
+                <h4>Descripción</h4>
                 <li class="list-group-item">{{ $notificacion->descripcion}}</li>
                 <br>
                 <h5>Datos Adicionales</h5>
