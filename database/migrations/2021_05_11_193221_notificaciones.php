@@ -29,7 +29,7 @@ class Notificaciones extends Migration
             $table->longText('descripcion');
 
             $table->string('estado')->default("Nueva");
-            $table->date('respondido_at')->default("2010-10-10");
+            $table->date('respondido_at')->default("1900-01-01");
             $table->longText('motivo');
 
             $table->timestamps();
