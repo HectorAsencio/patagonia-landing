@@ -67,7 +67,11 @@
                 <li class="list-group-item"><strong>Receptor: </strong>{{ $notificacion->receptor->name}}</li>
                 <li class="list-group-item"><strong>Estado: </strong>{{ $notificacion->estado}}</li>
                 <li class="list-group-item"><strong>Motivo: </strong>{{ $notificacion->motivo}}</li>
+                @if($notificacion->respondido_at == "1900-01-01")
+                <li class="list-group-item"><strong>Notificación sin respuesta.</strong></li>
+                @else
                 <li class="list-group-item"><strong>Respondido: </strong>{{ $notificacion->respondido_at}}</li>
+                @endif
             </div>
         </div>
         <div>
