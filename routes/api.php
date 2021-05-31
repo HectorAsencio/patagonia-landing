@@ -30,7 +30,7 @@ Route::get('/notificaciones/mias/{userId}', [App\Http\Controllers\Notificaciones
 
 Route::get('/notificaciones/bandeja/{userId}', [App\Http\Controllers\NotificacionesController::class, 'NotiBandeja']);
 
-Route::get('/notificaciones/notificacion/{notiId}/{accion}', [App\Http\Controllers\NotificacionesController::class, 'Actualizar']);
+Route::post('/notificaciones/notificacion/{notiId}/{accion}', [App\Http\Controllers\NotificacionesController::class, 'Actualizar']);
 
 Route::get('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'createAPI']);
 Route::post('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'crear']);
