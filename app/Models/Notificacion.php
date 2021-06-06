@@ -42,6 +42,7 @@ class Notificacion extends Model
         'estado',
         'respondido_at',
         'motivo',
+        'urlFile',
 
     ];
 

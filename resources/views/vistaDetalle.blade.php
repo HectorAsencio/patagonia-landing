@@ -88,8 +88,9 @@
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/aprobar" class="btn btn-success btn-circle btn-md"><i class="fa fa-check" style="padding-top: 5px;"></i></a>
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/rechazar" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times" style="padding-top: 5px;"></i></a>
                     </td>
-                </tr>
                     @endif
+                    <a type="button" href="{{$notificacion->urlFile}}"class="btn btn-primary btn-circle btn-md"><i class="fa fa-file" style="padding-top: 5px;"></i></a>
+                </tr>
             </div>
         </div>
 </section>
