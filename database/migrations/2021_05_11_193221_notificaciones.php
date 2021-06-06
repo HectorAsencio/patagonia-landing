@@ -32,6 +32,8 @@ class Notificaciones extends Migration
             $table->date('respondido_at')->default("1900-01-01");
             $table->longText('motivo');
 
+            $table->longText('urlFile');
+
             $table->timestamps();
 
         });

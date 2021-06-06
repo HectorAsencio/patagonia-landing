@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\Storage;
 use App\Models\Notificacion;
 
 class NotificacionesController extends Controller
@@ -103,12 +103,18 @@ class NotificacionesController extends Controller
             return redirect("/notificaciones/crear");
         }
 
+        $file = request()->file('upload');
+
+        $upload = Storage::disk('s3')->put($file->getClientOriginalName(), $file, 'public');
+        $uploadFullUrl = "https://notifyboard.s3.sa-east-1.amazonaws.com/" . $upload;
+
         $notificacion = Notificacion::create([
             'titulo' => $request->titulo,
             'descripcion' => $request->descripcion,
             'solicitante_id' => Auth::id(),
             'receptor_id' => $request->receptor,
             'motivo' => "N/A",
+            'urlFile' => $uploadFullUrl
         ]);
 
         return redirect("/misnotificaciones");

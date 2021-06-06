@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +46,36 @@ Route::get('/logout', function (Request $request) {
     $request->session()->regenerateToken();
     return redirect('/login');
 })->name("logout");
+
+Route::get('/upload', function () {
+    return view('upload');
+})->middleware('noti');
+
+Route::post('/upload', function (Request $request) {
+
+    $datosInvalidos = false;
+
+    $file = request()->file('upload');
+
+    if($file->guessExtension()=="pdf"){
+
+        $upload = Storage::disk('s3')->put($file->getClientOriginalName(), $file, 'public');
+
+        return Redirect::intended("https://notifyboard.s3.sa-east-1.amazonaws.com/" . $upload);
+
+    }
+    
+    else{
+
+        Session::flash('pdfIncorrectosMsg', 'El archivo debe tener extensión .pdf');
+        $datosInvalidos = true;
+
+    }
+
+    if($datosInvalidos){
+
+        return redirect("/notificaciones/crear");
+
+    }
+
+ })->middleware('noti');
