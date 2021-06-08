@@ -99,14 +99,25 @@ class NotificacionesController extends Controller
             $datosInvalidos = true;
         }
 
+        $file = request()->file('upload');
+
+        if($file->guessExtension()=="pdf"){
+
+            $upload = Storage::disk('s3')->put($file->getClientOriginalName(), $file, 'public');
+            $uploadFullUrl = "https://notifyboard.s3.sa-east-1.amazonaws.com/" . $upload;
+        
+        }
+
+        else{
+
+            Session::flash('pdfIncorrectosMsg', 'El archivo debe tener extensión .pdf');
+            $datosInvalidos = true;
+    
+        }
+
         if ($datosInvalidos) {
             return redirect("/notificaciones/crear");
         }
-
-        $file = request()->file('upload');
-
-        $upload = Storage::disk('s3')->put($file->getClientOriginalName(), $file, 'public');
-        $uploadFullUrl = "https://notifyboard.s3.sa-east-1.amazonaws.com/" . $upload;
 
         $notificacion = Notificacion::create([
             'titulo' => $request->titulo,
