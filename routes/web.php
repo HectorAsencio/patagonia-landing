@@ -36,6 +36,7 @@ Route::get('/notificaciones/{id}', [App\Http\Controllers\NotificacionesControlle
 // EQUIPO //
 Route::get('/equipo', [App\Http\Controllers\UsuariosController::class, 'index'])->middleware('auth')->middleware('noti');
 Route::get('/perfil/{id}', [App\Http\Controllers\UsuariosController::class, 'perfil'])->middleware('auth')->middleware('noti');
+Route::get('/perfil/avatar/{nuevoAvatar}', [App\Http\Controllers\UsuariosController::class, 'nuevoAvatar'])->middleware('auth')->middleware('noti');
 Route::get('/ayuda/{id}', [App\Http\Controllers\UsuariosController::class, 'ayuda'])->middleware('auth')->middleware('noti');
 
 // AUTENTICACIÓN
