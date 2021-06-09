@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use App\Models\User;
 
 class UsuariosController extends Controller
@@ -54,7 +58,9 @@ class UsuariosController extends Controller
     {
         $usuario = User::find($id);
 
-        return view('perfil', ['usuario' => $usuario]);
+        $files = File::files(public_path() . "\assets\img\users");
+
+        return view('perfil', ['usuario' => $usuario, 'avatars' => $files]);
     }
 
     public function ayuda($id)
@@ -62,6 +68,17 @@ class UsuariosController extends Controller
         $usuario = User::find($id);
 
         return view('ayuda', ['usuario' => $usuario]);
+    }
+
+    public function nuevoAvatar(Request $request, $nombreArchivo)
+    {
+        $user = User::find(Auth::id());
+
+        $user->avatar = $nombreArchivo;
+
+        $user->save();
+
+        return redirect("/perfil" . "/" . Auth::id());
     }
 
     /**
