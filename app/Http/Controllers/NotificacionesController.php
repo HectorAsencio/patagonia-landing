@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Notificacion;
+use App\Mail\DemoEmail;
+use Illuminate\Support\Facades\Mail;
 
 class NotificacionesController extends Controller
 
@@ -173,13 +175,11 @@ class NotificacionesController extends Controller
             $notificacion->estado = "Aprobado";
 
         }
-
         else if ($cambio=="rechazar"){
 
             $notificacion->estado = "Rechazado";
 
         }
-
         else {
 
             $notificacion->estado = "Pendiente";
@@ -189,6 +189,15 @@ class NotificacionesController extends Controller
         $notificacion->respondido_at = new \DateTime();
 
         $notificacion->save();
+        
+        $objDemo = new \stdClass();
+        $objDemo->titulo = $notificacion->titulo;
+        $objDemo->estado = $notificacion->estado;
+        $objDemo->sender = 'NotifyBoard';
+        $objDemo->receiver = $notificacion->solicitante->email;
+        $objDemo->id = $notificacion->id;
+
+        Mail::to($notificacion->solicitante->email)->send(new DemoEmail($objDemo));
 
         return redirect("/notificaciones");
     }
