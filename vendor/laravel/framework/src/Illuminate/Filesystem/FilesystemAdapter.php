@@ -270,7 +270,7 @@ class FilesystemAdapter implements CloudFilesystemContract
      */
     public function putFileAs($path, $file, $name, $options = [])
     {
-        $stream = fopen(is_string($file) ? $file : $file->getRealPath(), 'r');
+        $stream = fopen(is_string($file) ? $file : $file->getRealPath(), 'r+');
 
         // Next, we will format the path of the file and store the file using a stream since
         // they provide better performance than alternatives. Once we write the file this

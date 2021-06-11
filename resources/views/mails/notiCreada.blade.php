@@ -1,9 +1,10 @@
+<br>
 Estimado <i>{{ $demo->receiver }}</i>:<br>
-<p>Su solicitud "{{ $demo->noti_titulo }}" ha cambiado al estado: "{{ $demo->noti_estado }}"</p>
+<p>Tiene una nueva notificacion: "{{ $demo->titulo }}" </p>
  
-<p><u>Puedes revisar el detalle de tu solicitud en el siguiente link</u></p>
+<p><u>Puede revisar el detalle de la notificacion en el siguiente link.</u></p>
  
-<a href="/notificaciones/{{ $demo->noti_id }}" target="_blank">Detalle<a>
+<a href="http://mighty-taiga-25832.herokuapp.com/notificaciones/{{ $demo->id }}" target="_blank">Detalle<a>
 <br/>
 <br/>
 Gracias,

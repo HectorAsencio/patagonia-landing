@@ -9,7 +9,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Notificacion;
+use App\Models\User;
+use App\Mail\DemoCrearMail;
 use App\Mail\DemoEmail;
+
 use Illuminate\Support\Facades\Mail;
 
 class NotificacionesController extends Controller
@@ -128,7 +131,17 @@ class NotificacionesController extends Controller
             'receptor_id' => $request->receptor,
             'motivo' => "N/A",
             'urlFile' => $uploadFullUrl
+
         ]);
+
+        $receptor = User::find($request->receptor);
+        $objDemo = new \stdClass();
+        $objDemo->titulo = $notificacion->titulo;
+        $objDemo->sender = 'NotifyBoard';
+        $objDemo->receiver = $receptor->name;
+        $objDemo->id = $notificacion->id;
+
+        Mail::to($receptor->email)->send(new DemoCrearMail($objDemo));
 
         return redirect("/misnotificaciones");
     }
