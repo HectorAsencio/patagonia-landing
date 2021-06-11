@@ -71,6 +71,7 @@
                 <li class="list-group-item"><strong>Notificación sin respuesta.</strong></li>
                 @else
                 <li class="list-group-item"><strong>Respondido: </strong>{{ $notificacion->respondido_at}}</li>
+                <li class="list-group-item"><strong>Archivo adjunto: </strong><img style="width:50px" src="/assets/img/elements/pdf.png">{{ $notificacion->urlFile}}<a style="padding:15px" type="button" href="{{$notificacion->urlFile}}"class="btn btn-primary"><i style="padding-top: 5px; font-family: 'Poppins',sans-serif; font-weight:300;"> Descargar</i></a></li>
                 @endif
             </div>
         </div>
@@ -78,18 +79,21 @@
             
             <div class="col text-center" style="margin-top: 2%;">
                 <tr>
+                    
+                    @if ($notificacion->estado=="Nueva")
                     <p><strong>Acciones:</strong></p>
                     <br>
-                    @if ($notificacion->estado=="Nueva")
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/aprobar" class="btn btn-success btn-circle btn-md"><i class="fa fa-check" style="padding-top: 5px;"></i></a>
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/pendiente" class="btn btn-info btn-circle btn-md"><i class="fa fa-clock" style="padding-top: 5px;"></i></a>
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/rechazar" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times" style="padding-top: 5px;"></i></a>
                     @elseif ($notificacion->estado=="Pendiente")
+                    <p><strong>Acciones:</strong></p>
+                    <br>
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/aprobar" class="btn btn-success btn-circle btn-md"><i class="fa fa-check" style="padding-top: 5px;"></i></a>
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/rechazar" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times" style="padding-top: 5px;"></i></a>
                     </td>
                     @endif
-                    <a type="button" href="{{$notificacion->urlFile}}"class="btn btn-primary btn-circle btn-md"><i class="fa fa-file" style="padding-top: 5px;"></i></a>
+                    
                 </tr>
             </div>
         </div>
