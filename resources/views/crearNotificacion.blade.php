@@ -64,7 +64,7 @@
                             <!-- Archivo -->
                             <div class="form-group">
                                 <label for="titulo" class="col-md-4 col-form-label text-md-right">{{ __('Archivo adjunto')}}</label>
-                                <input type="file" name="upload" required />
+                                <input type="file" name="upload" accept=".pdf" required />
                             </div>
 
                             <div class="form-group row">
