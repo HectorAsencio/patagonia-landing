@@ -67,11 +67,11 @@
                 <li class="list-group-item"><strong>Receptor: </strong>{{ $notificacion->receptor->name}}</li>
                 <li class="list-group-item"><strong>Estado: </strong>{{ $notificacion->estado}}</li>
                 <li class="list-group-item"><strong>Motivo: </strong>{{ $notificacion->motivo}}</li>
+                <li class="list-group-item"><strong>Archivo adjunto: </strong><img style="width:50px" src="/assets/img/elements/pdf.png"> {{ $notificacion->nombreFile}} <a style="padding:15px" type="button" href="{{$notificacion->urlFile}}"class="btn btn-primary"><i style="padding-top: 5px; font-family: 'Poppins',sans-serif; font-weight:300;"> Descargar</i></a></li>
                 @if($notificacion->respondido_at == "1900-01-01")
-                <li class="list-group-item"><strong>Notificación sin respuesta.</strong></li>
+                <li class="list-group-item" style="color:red"><strong>Notificación sin respuesta</strong></li>
                 @else
                 <li class="list-group-item"><strong>Respondido: </strong>{{ $notificacion->respondido_at}}</li>
-                <li class="list-group-item"><strong>Archivo adjunto: </strong><img style="width:50px" src="/assets/img/elements/pdf.png">{{ $notificacion->urlFile}}<a style="padding:15px" type="button" href="{{$notificacion->urlFile}}"class="btn btn-primary"><i style="padding-top: 5px; font-family: 'Poppins',sans-serif; font-weight:300;"> Descargar</i></a></li>
                 @endif
             </div>
         </div>
