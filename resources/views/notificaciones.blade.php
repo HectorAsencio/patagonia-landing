@@ -77,9 +77,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                            
                             @foreach ($notificaciones as $noti)
-
+                            @php $fecha = new DateTime();                            
+                            @endphp
+                            @if (date_diff($noti->created_at, $fecha)->days > 3 && $noti->estado == "Nueva")
+                            <tr class="table-danger">
+                            @else
                             <tr>
+                            @endif
                                 <th scope="row">{{ $noti->id }}</th>
                                 <td>{{ $noti->titulo }}</td>
                                 <td>{{ $noti->solicitante->name }}</td>
