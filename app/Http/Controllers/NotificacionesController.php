@@ -156,6 +156,13 @@ class NotificacionesController extends Controller
     {
         $notificacion = Notificacion::find($id);
 
+        $notificacion->nombreFile = preg_split('/aws.com/', $notificacion->urlFile, -1, PREG_SPLIT_OFFSET_CAPTURE)[1];
+        //var_dump($notificacion->nombreFile[0]);
+        //var_dump("///-------------------------------");
+        $notificacion->nombreFile = preg_split('/.pdf/', $notificacion->nombreFile[0], -1, PREG_SPLIT_OFFSET_CAPTURE)[0];
+        $notificacion->nombreFile = str_replace("/", "", $notificacion->nombreFile[0]) . ".pdf";
+        //var_dump($notificacion->nombreFile);
+
         return view('vistaDetalle', [
             'notificacion' => $notificacion,
             ]);
