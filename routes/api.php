@@ -15,22 +15,22 @@ use App\Models\Notificacion;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('notificaciones', function() {
-    // If the Content-Type and Accept headers are set to 'application/json',
-    // this will return a JSON structure. This will be cleaned up later.
-    return Notificacion::all();
+Route::middleware('auth:api')->get('/notificaciones/mias/{userId}', [App\Http\Controllers\NotificacionesController::class, 'NotiUsuario']);
+
+Route::middleware('auth:api')->get('/notificaciones/bandeja/{userId}', [App\Http\Controllers\NotificacionesController::class, 'NotiBandeja']);
+
+Route::middleware('auth:api')->get('/notificaciones/notificacion/{notiId}/{accion}', [App\Http\Controllers\NotificacionesController::class, 'Actualizar']);
+
+Route::middleware('auth:api')->get('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'createAPI']);
+Route::middleware('auth:api')->post('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'crear']);
+
+Route::fallback(function(){
+    return response()->json([
+        'message' => 'Page Not Found. If error persists, contact info@website.com'], 404);
 });
-
-Route::get('/notificaciones/mias/{userId}', [App\Http\Controllers\NotificacionesController::class, 'NotiUsuario']);
-
-Route::get('/notificaciones/bandeja/{userId}', [App\Http\Controllers\NotificacionesController::class, 'NotiBandeja']);
-
-Route::get('/notificaciones/notificacion/{notiId}/{accion}', [App\Http\Controllers\NotificacionesController::class, 'Actualizar']);
-
-Route::get('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'createAPI']);
-Route::post('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'crear']);
