@@ -203,6 +203,7 @@ class NotificacionesController extends Controller
 
         else if ($cambio=="eliminar"){
 
+            $notificacion->estado = "Eliminada";
             Notificacion::destroy($id);
 
         }
