@@ -89,6 +89,9 @@
                                 <td>{{ $noti->estado }}</td>
                                 <td>
                                     <a type="button" href="/notificaciones/{{ $noti->id }}" class="btn btn-primary btn-circle btn-md"><i class="fa fa-eye" style="padding-top: 5px;"></i></a>
+                                @if($noti->estado=="Nueva")
+                                    <a type="button" href="/notificaciones/actualizar/{{ $noti->id}}/eliminar" class="btn btn-danger btn-circle btn-md"><i class="fa fa-trash" style="padding-top: 5px;"></i></a>
+                                @endif
                                 </td>
                             </tr>
                             
