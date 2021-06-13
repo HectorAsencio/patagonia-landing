@@ -284,12 +284,22 @@ class NotificacionesController extends Controller
                 return response()->json(['flag'=>'failure', 'mensaje'=>'Debe seleccionar un receptor'], 200, [], JSON_NUMERIC_CHECK);
             }
 
+            $file = request()->file('upload');
+
+            if($file->guessExtension()=="pdf"){
+
+                $upload = Storage::disk('s3')->put($file->getClientOriginalName(), $file, 'public');
+                $uploadFullUrl = "https://notifyboard.s3.sa-east-1.amazonaws.com/" . $upload;
+            
+            }
+
             $notificacion = Notificacion::create([
                 'titulo' => $request->titulo,
                 'descripcion' => $request->descripcion,
                 'solicitante_id' => $request->solicitante,
                 'receptor_id' => $request->receptor,
                 'motivo' => "N/A",
+                'urlFile' => $uploadFullUrl
             ]);
 
             return response()->json(['flag'=>'success', 'mensaje'=>'Notificación creada exitosamente'], 200, [], JSON_NUMERIC_CHECK);
