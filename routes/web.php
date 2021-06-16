@@ -39,6 +39,9 @@ Route::get('/perfil/{id}', [App\Http\Controllers\UsuariosController::class, 'per
 Route::get('/perfil/avatar/{nuevoAvatar}', [App\Http\Controllers\UsuariosController::class, 'nuevoAvatar'])->middleware('auth')->middleware('noti');
 Route::get('/ayuda/{id}', [App\Http\Controllers\UsuariosController::class, 'ayuda'])->middleware('auth')->middleware('noti');
 
+//DASHBOARD
+Route::get('/dashboard', [App\Http\Controllers\NotificacionesController::class, 'dashboard'])->middleware('auth')->middleware('noti');
+
 // AUTENTICACIÓN
 Auth::routes();
 Route::get('/logout', function (Request $request) {

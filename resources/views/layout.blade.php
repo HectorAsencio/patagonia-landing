@@ -41,6 +41,12 @@
             <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css">
 
             <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
             
             <style>
                 .paginate_button .current {
@@ -108,6 +114,7 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
+                                        <li><a href="/dashboard">Dashboard</a></li>
                                         <li><a href="/misnotificaciones"> Mis notificaciones</a></li>
                                         <li><a href="/notificaciones">Bandeja De Entrada</a></li>
                                         <li><a href="/equipo">Equipo</a></li>

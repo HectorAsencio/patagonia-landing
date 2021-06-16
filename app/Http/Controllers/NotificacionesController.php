@@ -41,6 +41,58 @@ class NotificacionesController extends Controller
             'notificaciones' => $notificaciones,
             ]);
     }
+    
+    
+    public function dashboard(Request $request)
+    {
+        // NOTIFICACIONES
+        $nNotificaciones = Notificacion::count();
+        $aNotificaciones = Notificacion::where('estado', 'Aprobado')->count();
+        $rNotificaciones = Notificacion::where('estado', 'Rechazado')->count();
+        $pNotificaciones = Notificacion::where('estado', 'Pendiente')->count();
+
+        // USUARIOS
+        $nUsuarios = User::count();
+        $dUsuarios = User::where('cargo', 'Director')->count();
+        $sUsuarios = User::where('cargo', 'Supervisor')->count();
+
+        //listado mes
+        
+        /*$listadoMeses= Notificacion::select('id', 'created_at')
+            ->get()
+            ->groupBy(function($mes) {
+            return Notificacion::parse($mes->created_at)->format('m');
+
+        var_dump($listadoMeses);*/
+        $notiEnero =  DB::table("notificaciones")->whereMonth('created_at', '=', '01')->get()->count();
+        $notiFeb =  DB::table("notificaciones")->whereMonth('created_at', '=', '02')->get()->count();
+        $notiMarzo =  DB::table("notificaciones")->whereMonth('created_at', '=', '03')->get()->count();
+        $notiAbril =  DB::table("notificaciones")->whereMonth('created_at', '=', '04')->get()->count();
+        $notiMayo =  DB::table("notificaciones")->whereMonth('created_at', '=', '05')->get()->count();
+        $notiJunio =  DB::table("notificaciones")->whereMonth('created_at', '=', '06')->get()->count();
+        $notiJulio =  DB::table("notificaciones")->whereMonth('created_at', '=', '07')->get()->count();
+        $notiAgosto =  DB::table("notificaciones")->whereMonth('created_at', '=', '08')->get()->count();
+        $notiSeptiembre =  DB::table("notificaciones")->whereMonth('created_at', '=', '09')->get()->count();
+        $notiOctubre =  DB::table("notificaciones")->whereMonth('created_at', '=', '10')->get()->count();
+        $notiNoviembre =  DB::table("notificaciones")->whereMonth('created_at', '=', '11')->get()->count();
+        $notiDiciembre =  DB::table("notificaciones")->whereMonth('created_at', '=', '12')->get()->count();
+        $listadoMeses=[$notiEnero, $notiFeb, $notiMarzo,$notiAbril,$notiMayo,$notiJunio,$notiJulio,$notiAgosto,$notiSeptiembre,$notiOctubre,$notiNoviembre, $notiDiciembre];
+
+        //var_dump($listadoMeses);
+
+        return view('dashboard', [
+            'nNotificaciones' => $nNotificaciones,
+            'aNotificaciones' => $aNotificaciones,
+            'rNotificaciones' => $rNotificaciones,
+            'pNotificaciones' => $pNotificaciones,
+            'nUsuarios' => $nUsuarios,
+            'dUsuarios' => $dUsuarios,
+            'sUsuarios' => $sUsuarios,
+            'nNotiUsuarios' => ($nUsuarios / $nNotificaciones),
+            'listadoMeses' => $listadoMeses,
+            ]);
+    
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -336,4 +388,5 @@ class NotificacionesController extends Controller
         }
 
     }
+
 }
