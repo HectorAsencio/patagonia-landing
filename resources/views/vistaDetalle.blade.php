@@ -48,7 +48,7 @@
 
 <!-- ================ contact section start ================= -->
 <section class="contact-section">
-    <div class="container" style="max-width: 55%">
+    <div class="container" style="max-width: 90%">
 
         <div class="row">
             <div class="col-12">
@@ -76,7 +76,7 @@
             </div>
         </div>
         <div>
-            
+        
             <div class="col text-center" style="margin-top: 2%;">
                 <tr>
                     
@@ -93,8 +93,12 @@
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/rechazar" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times" style="padding-top: 5px;"></i></a>
                     </td>
                     @endif
+                   
                     
                 </tr>
+            </div>
+            <div class="col text-center" style="margin-top:30px;">
+            <iframe width="100%" height ="400" src="{{$notificacion->urlFile}}" frameborder="0"></iframe>
             </div>
         </div>
 </section>
