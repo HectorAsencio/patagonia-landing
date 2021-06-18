@@ -53,7 +53,7 @@ class LoginController extends Controller
                     'data' => $user->toArray(),
                 ]);
             } else {
-                return redirect('/');
+                return redirect('/notificaciones');
             }
             
         }
