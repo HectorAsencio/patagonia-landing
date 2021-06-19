@@ -57,17 +57,27 @@ class UsuariosController extends Controller
     public function perfil($id)
     {
         $usuario = User::find($id);
-
-        $files = File::files(public_path() . "\assets\img\users");
+        $files = File::files(public_path() . "/assets/img/users");
 
         return view('perfil', ['usuario' => $usuario, 'avatars' => $files]);
     }
 
     public function ayuda($id)
     {
-        $usuario = User::find($id);
+        $usuario = User::find($id)->to;
 
         return view('ayuda', ['usuario' => $usuario]);
+    }
+
+    public function equipoTrabajo() {
+        $users = User::select('name', 'telefono', 'email', 'cargo', 'avatar')->get();
+        foreach ($users as $u) {
+            $u->avatar = '/assets/img/users/' . $u->avatar;
+        }
+        $data = [
+            'users' => $users
+        ];
+        return response()->json($data, 200, [], JSON_NUMERIC_CHECK);
     }
 
     public function nuevoAvatar(Request $request, $nombreArchivo)
