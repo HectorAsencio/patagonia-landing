@@ -58,10 +58,21 @@
                 <i class="fa fa-bell fa-2x" aria-hidden="true"></i>
                 <h2
                     class="timer count-title count-number"
+                    data-to="{{ $mNotificaciones }}"
+                    data-speed="1500"
+                ></h2>
+                <p class="count-text">Mis Notificaciones</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="counter">
+                <i class="fa fa-bell fa-2x" aria-hidden="true"></i>
+                <h2
+                    class="timer count-title count-number"
                     data-to="{{ $nNotificaciones }}"
                     data-speed="1500"
                 ></h2>
-                <p class="count-text">Notificaciones</p>
+                <p class="count-text">Notificaciones Totales</p>
             </div>
         </div>
         <div class="col">
