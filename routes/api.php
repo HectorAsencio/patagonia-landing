@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Models\Notificacion;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,11 @@ use App\Models\Notificacion;
 */
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user/me', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('auth:api')->get('/equipo', [App\Http\Controllers\UsuariosController::class, 'equipoTrabajo']);
 
 Route::middleware('auth:api')->get('/notificaciones/mias/{userId}', [App\Http\Controllers\NotificacionesController::class, 'NotiUsuario']);
 
