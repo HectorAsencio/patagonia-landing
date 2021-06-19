@@ -46,10 +46,13 @@ class NotificacionesController extends Controller
     public function dashboard(Request $request)
     {
         // NOTIFICACIONES
+        
         $nNotificaciones = Notificacion::count();
+        $mnotificaciones = Notificacion::where('receptor_id', Auth::id())->count();
         $aNotificaciones = Notificacion::where('estado', 'Aprobado')->count();
         $rNotificaciones = Notificacion::where('estado', 'Rechazado')->count();
         $pNotificaciones = Notificacion::where('estado', 'Pendiente')->count();
+
 
         // USUARIOS
         $nUsuarios = User::count();
@@ -81,6 +84,7 @@ class NotificacionesController extends Controller
         //var_dump($listadoMeses);
 
         return view('dashboard', [
+            'mNotificaciones' => $mnotificaciones,
             'nNotificaciones' => $nNotificaciones,
             'aNotificaciones' => $aNotificaciones,
             'rNotificaciones' => $rNotificaciones,
