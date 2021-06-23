@@ -1,5 +1,7 @@
+README.MD > Manuel de Usuario
+
 <p align="center">
-    <img src="./pic/logo.png">
+    <img src="../pic/logo.png">
 </p>
 
 ## **Manual de Usuario NotifyBoard**
@@ -21,7 +23,7 @@ En la vista de sus notificaciones entrantes, podrá ver una lista que indica tod
 
 Los botones para realizar dicha acción son los siguientes:
 
-<p align="center"><img src="./pic/acciones.png"></p>
+<p align="center"><img src="../pic/acciones.png"></p>
 
 
 Donde el botón verde es para aprobar, el botón amarillo es para dejar pendiente, y el botón rojo es para rechazar.
@@ -29,15 +31,20 @@ Donde el botón verde es para aprobar, el botón amarillo es para dejar pendient
 
 ## **¿Como eliminar una notificación que he creado?**
 
-En los comandos de usuario autenticado, debes ingresar a la prestaña "Mis notificaciones". Luego debes ver las notificaciones que has creado que únicamente están con el estado "
+En los comandos de usuario autenticado, debes ingresar a la prestaña "Mis notificaciones". Luego debes ver las notificaciones que has creado que únicamente están con el estado "Nueva", ya que las aprobadas, rechazadas u pendientes, no pueden ser alteradas una vez accionadas.
+
+Luego serás redirigido a la pestaña "Mis notificaciones", donde podrás ver tus notificaciones actualizadas.
 
 ## **¿Como crear una notificacion?**
 En la pestaña de notificaciones debe hacer click en el botón "crear". Posterior a esto se abrirá un formulario que solicitará el título de la notificación, descripción y destinatario que aprobará.
 
-<p ><img src="./pic/nuevaNoti.png"></p>
+<p ><img src="../pic/nuevaNoti.png"></p>
 
 ## **¿Como visualizar la informacion de mis integrantes de equipo?**
 Para visualizar la información de los integrantes de su equipo de trabajo, debe acceder al menú principal y hacer click en la pestaña "equipo". Luego se despliegará la información correspondiente al equipo de trabajo, nombres, cargos, correo y teléfono.
 
 ## **¿Como ver el detalle de una notificación?**
+Para ver el detalle de una única notificación, debe hacer click en el botón celeste con forma de ojo en su lista principal de notificaciones. Este abrirá el detalle de una única notificación de su lista.
 
+<p ><img src="../pic/detalle.png"></p>
+<p ><img src="../pic/datosNoti.png"></p>
