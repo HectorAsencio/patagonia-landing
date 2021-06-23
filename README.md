@@ -1,11 +1,15 @@
 <p align="center">
-    </p><img src="./pic/logo.png">
+    </p><img src="pic/logo.png">
 </p>
+
+![sadsa](pic/logo.png)
 
 ## **Nuestro Proyecto**
 
 **NotifyBoard** es un servicio que trabaja con el framework de Laravel y consiste de un sistema de notificaciones. El software tiene la funcionalidad de enviar alertas de notificaciones para que el usuario pueda revisarlas. También proporciona la funcionalidad de tomar acción sobre estas notificaciones como aprobar, dejar pendiente o rechazarlas.
 
+## **Manuales**
+[Manual de Usuario](app/ManualUsuario.md)
 
 ## **Planificación del proyecto: Landing Page**
 
