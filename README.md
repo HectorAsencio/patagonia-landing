@@ -1,8 +1,4 @@
-<p align="center">
-    </p><img src="pic/logo.png">
-</p>
-
-![sadsa](pic/logo.png)
+![](pic/logo.png)
 
 ## **Nuestro Proyecto**
 
