@@ -88,7 +88,7 @@
                         </div>
 
                         @guest
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8">
                             <!-- Main-menu -->
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav> 
@@ -103,13 +103,13 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-2 col-md-3">
+                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3">
                             <div class="header-right-btn f-right d-none d-lg-block">
                                 <a href="/login" class="btn header-btn">Iniciar sesión</a>
                             </div>
                         </div>
                         @else
-                        <div class="col-xl-7 col-lg-8 col-md-8">
+                        <div class="col-xl-7 col-lg-8 col-md-8 col-sm-8 col-xs-8">
                             <!-- Main-menu -->
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
