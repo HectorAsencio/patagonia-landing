@@ -88,7 +88,7 @@
                         </div>
 
                         @guest
-                        <div class="col-xl-8 col-lg-8 col-md-8">
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
                             <!-- Main-menu -->
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav> 

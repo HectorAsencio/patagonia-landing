@@ -6,6 +6,7 @@
 
 ## **Manuales**
 [Manual de Usuario](app/ManualUsuario.md)
+[Manual de API](app/ManualAPI.md)
 
 ## **Planificación del proyecto: Landing Page**
 
