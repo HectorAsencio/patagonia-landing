@@ -70,7 +70,7 @@ class UsuariosController extends Controller
     }
 
     public function equipoTrabajo() {
-        $users = User::select('name', 'telefono', 'email', 'cargo', 'avatar')->get();
+        $users = User::select('id', 'name', 'telefono', 'email', 'cargo', 'avatar')->get();
         foreach ($users as $u) {
             $u->avatar = '/assets/img/users/' . $u->avatar;
         }
