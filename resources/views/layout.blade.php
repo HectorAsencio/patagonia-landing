@@ -118,6 +118,9 @@
                                         <li><a href="/misnotificaciones"> Mis notificaciones</a></li>
                                         <li><a href="/notificaciones">Bandeja De Entrada</a></li>
                                         <li><a href="/equipo">Equipo</a></li>
+                                        <li class="mobile-menu" style="display: none;"><a href="/perfil/{{ Auth::user()->id }}">Perfil</a></li>
+                                        <li class="mobile-menu" style="display: none;"><a href="/ayuda/{{ Auth::user()->id }}">Ayuda</a></li>
+                                        <li class="mobile-menu" style="display: none;"><a href="{{ route('logout') }}">Salir</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -129,6 +132,13 @@
                                     visibility: hidden;
                                     clear: both;
                                     display: none;
+                                }
+                            }
+                            @media screen and (max-width: 600px) {
+                                .mobile-menu {
+                                    visibility: block !important;
+                                    clear: both;
+                                    display: block !important;
                                 }
                             }
                             .badge {
