@@ -91,6 +91,14 @@ class UsuariosController extends Controller
         return redirect("/perfil" . "/" . Auth::id());
     }
 
+    public function actualizar(Request $request) {
+        $user = User::find(Auth::id());
+        $user->name = $request->name;
+        $user->telefono = $request->telefono;
+        $user->save();
+        return redirect()->back();
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

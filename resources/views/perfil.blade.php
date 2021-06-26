@@ -12,7 +12,7 @@
         </div>
 
         <div class="bd-example">
-            <form method="POST" action="/users/update">
+            <form method="POST" action="{{ url('/perfil/actualizar') }}">
                 @csrf
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
@@ -25,12 +25,12 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroupPrepend3">@</span>
                             </div>
-                            <input type="text" class="form-control" name="name" placeholder="Nombre" aria-describedby="inputGroupPrepend3" value="{{Auth::user()->name}}" required>
+                            <input id="name" type="text" class="form-control" name="name" placeholder="Nombre" aria-describedby="inputGroupPrepend3" value="{{Auth::user()->name}}" required>
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="validationServer03">Teléfono</label>
-                        <input type="text" class="form-control" placeholder="+56 9 .... ...." value="{{Auth::user()->telefono}}" required>
+                        <input id="telefono" name="telefono" type="text" class="form-control" pattern="^(\+?56)?(\s?)(0?9)(\s?)[9876543]\d{7}$" placeholder="+56912345678" value="{{Auth::user()->telefono}}" required>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="validationServer04">Cargo</label>
