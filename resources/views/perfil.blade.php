@@ -78,6 +78,36 @@
                     <img src="{{asset('assets/img/users/user-(5).png')}}" style="width: 100%;">
                 </a>
             </div>
+            <div class="col-lg-2">
+                <a href="/perfil/avatar/user-(6).png">
+                    <img src="{{asset('assets/img/users/user-(6).png')}}" style="width: 100%;">
+                </a>
+            </div>
+            <div class="col-lg-2">
+                <a href="/perfil/avatar/user-(7).png">
+                    <img src="{{asset('assets/img/users/user-(7).png')}}" style="width: 100%;">
+                </a>
+            </div>
+            <div class="col-lg-2">
+                <a href="/perfil/avatar/user-(8).png">
+                    <img src="{{asset('assets/img/users/user-(8).png')}}" style="width: 100%;">
+                </a>
+            </div>
+            <div class="col-lg-2">
+                <a href="/perfil/avatar/user-(9).png">
+                    <img src="{{asset('assets/img/users/user-(9).png')}}" style="width: 100%;">
+                </a>
+            </div>
+            <div class="col-lg-2">
+                <a href="/perfil/avatar/user-(10).png">
+                    <img src="{{asset('assets/img/users/user-(10).png')}}" style="width: 100%;">
+                </a>
+            </div>
+            <div class="col-lg-2">
+                <a href="/perfil/avatar/user-22.png">
+                    <img src="{{asset('assets/img/users/user-22.png')}}" style="width: 100%;">
+                </a>
+            </div>
         </div>
 
 
