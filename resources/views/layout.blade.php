@@ -182,6 +182,15 @@
                                             style="color: #60ad5e;color:white;">Salir</a></li>
                                 </ul>
                             </div>
+
+                            <img class="mobile-menu" src="{{asset('assets/img/users/'.Auth::user()->avatar)}}"
+                                        style="width: 30px;display: none;
+    border-radius: 100%;
+    border: 2px solid #4ad0ff;
+    position: absolute;
+    top: -33px;
+    right: 70px;">
+
                         </div>
                         @endguest
 
@@ -222,10 +231,10 @@
                                 </div>
                              </div>
                              <div class="footer-social">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fas fa-globe"></i></a>
-                                <a href="#"><i class="fab fa-behance"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/softpatagoniaSPA"><i class="fab fa-facebook-f"></i></a>
+                                <a target="_blank" href="https://twitter.com/SoftPatagonia"><i class="fab fa-twitter"></i></a>
+                                <a target="_blank" href="https://www.softpatagonia.com/"><i class="fas fa-globe"></i></a>
+                                <a target="_blank" href="https://www.instagram.com/softpatagonia/"><i class="fab fa-instagram"></i></a>
                             </div>
                          </div>
                        </div>

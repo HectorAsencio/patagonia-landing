@@ -92,7 +92,7 @@ class NotificacionesController extends Controller
             'nUsuarios' => $nUsuarios,
             'dUsuarios' => $dUsuarios,
             'sUsuarios' => $sUsuarios,
-            'nNotiUsuarios' => ($nUsuarios / $nNotificaciones),
+            'nNotiUsuarios' => ($nNotificaciones / $nUsuarios),
             'listadoMeses' => $listadoMeses,
             ]);
     
