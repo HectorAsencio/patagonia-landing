@@ -68,20 +68,56 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header" id="headingThree">
+                    <div class="card-header" id="headingFour">
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="padding: 15px 5px;">
                                 ¿Como ver una notificación?
                             </button>
                         </h5>
                     </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                         <div class="card-body">
                             Para ver el detalle de una única notificación, debe hacer click en el botón celeste con forma de ojo en su lista principal de notificaciones. Este abrirá el detalle de una única notificación de su lista.
                             <br><br>
                             <img src="{{asset('assets/img/help/detalle1.png')}}" style="width: 100%;">
                             <br><br>
                             <img src="{{asset('assets/img/help/detalle2.png')}}" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" style="padding: 15px 5px;">
+                                ¿Como eliminar una notificación creada?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                        <div class="card-body">
+                            En los comandos de usuario autenticado, debes ingresar a la pestaña "Mis notificaciones". Luego debes ver las notificaciones que has creado que únicamente están con el estado "Nueva", ya que las aprobadas, rechazadas y pendientes, no pueden ser alteradas una vez accionadas.
+                            Luego serás redirigido a la pestaña "Mis notificaciones", donde podrás ver tus notificaciones actualizadas.
+                            <br><br>
+                            <img src="{{asset('assets/img/help/eliminarNoti.png')}}" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSix">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" style="padding: 15px 5px;">
+                                ¿Cómo ver mi Dashboard y que información contiene?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                        <div class="card-body">
+                            Para revisar el contenido del dashboard, debe dirigirse a la parte superior de la página y podrá ver un link que dice Dashboard. Al hacer click, este le redirigirá a la página de Dashboard. 
+                            En esta página puede encontrar las notificaciones totales tanto suyas como las de todos los usuarios registrados. Estas están divididas en categorías como Aprobadas, Rechazadas o Pendientes. También encontrará gráficas que permiten ver la cantidad de usuarios registrados, la cantidad de notificaciones en cada categoría y la cantidad de notificaciones recibidas en cada mes. 
+                            <br><br>
+                            <img src="{{asset('assets/img/help/dashboard.png')}}" style="width: 100%;">
+                            <br><br>
+                            <img src="{{asset('assets/img/help/graficas.png')}}" style="width: 100%;">
                         </div>
                     </div>
                 </div>
