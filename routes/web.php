@@ -32,6 +32,7 @@ Route::get('/notificaciones/crear', [App\Http\Controllers\NotificacionesControll
 Route::post('/notificaciones/crear', [App\Http\Controllers\NotificacionesController::class, 'store'])->middleware('auth')->middleware('noti');
 Route::get('/notificaciones/actualizar/{id}/{cambio}', [App\Http\Controllers\NotificacionesController::class, 'update'])->middleware('auth')->middleware('noti');
 Route::get('/notificaciones/{id}', [App\Http\Controllers\NotificacionesController::class, 'show'])->middleware('auth')->middleware('noti');
+Route::get('/eliminar/notificacion/{id}', [App\Http\Controllers\NotificacionesController::class, 'delete'])->middleware('auth')->middleware('noti');;
 
 // EQUIPO //
 Route::get('/equipo', [App\Http\Controllers\UsuariosController::class, 'index'])->middleware('auth')->middleware('noti');

@@ -263,14 +263,6 @@ class NotificacionesController extends Controller
 
         }
 
-        else if ($cambio=="eliminar"){
-
-            $notificacion->estado = "Eliminada";
-            Notificacion::destroy($id);
-            return redirect("/misnotificaciones");
-
-        }
-
         else {
 
             $notificacion->estado = "Pendiente";
@@ -398,6 +390,15 @@ class NotificacionesController extends Controller
             return response()->json(['flag'=>'failure', 'mensaje'=>$e->getMessage()], 200, []);
         }
 
+    }
+
+    public function delete(Request $request, $id){
+
+        $notificacion = Notificacion::find($id);
+
+        $notificacion->delete();
+
+        return redirect('/misnotificaciones');
     }
 
 }
