@@ -86,6 +86,10 @@
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/aprobar" class="btn btn-success btn-circle btn-md"><i class="fa fa-check" style="padding-top: 5px;"></i></a>
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/pendiente" class="btn btn-info btn-circle btn-md"><i class="fa fa-clock" style="padding-top: 5px;"></i></a>
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/rechazar" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times" style="padding-top: 5px;"></i></a>
+                        @if(Auth::user()->id==$notificacion->solicitante_id)
+                        <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/eliminar" class="btn btn-danger btn-circle btn-md"><i class="fa fa-trash" style="padding-top: 5px;"></i></a>
+                        @else
+                        @endif
                     @elseif ($notificacion->estado=="Pendiente")
                     <p><strong>Acciones:</strong></p>
                     <br>
@@ -93,8 +97,8 @@
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/rechazar" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times" style="padding-top: 5px;"></i></a>
                     </td>
                     @endif
+
                    
-                    
                 </tr>
             </div>
             <div class="col text-center" style="margin-top:30px;">

@@ -261,6 +261,7 @@ class NotificacionesController extends Controller
 
             $notificacion->estado = "Eliminada";
             Notificacion::destroy($id);
+            return redirect("/misnotificaciones");
 
         }
 
