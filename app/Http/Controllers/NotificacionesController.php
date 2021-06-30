@@ -210,6 +210,7 @@ class NotificacionesController extends Controller
      */
     public function show($id)
     {
+
         $notificacion = Notificacion::find($id);
 
         $notificacion->nombreFile = preg_split('/aws.com/', $notificacion->urlFile, -1, PREG_SPLIT_OFFSET_CAPTURE)[1];
@@ -218,6 +219,11 @@ class NotificacionesController extends Controller
         $notificacion->nombreFile = preg_split('/.pdf/', $notificacion->nombreFile[0], -1, PREG_SPLIT_OFFSET_CAPTURE)[0];
         $notificacion->nombreFile = str_replace("/", "", $notificacion->nombreFile[0]) . ".pdf";
         //var_dump($notificacion->nombreFile);
+
+        if ($notificacion == NULL){
+            $data = ['flag'=>'failure', 'mensaje'=>'No se encontró la notififación ingresada'];
+            return response()->json($data, 404, [], JSON_NUMERIC_CHECK);
+        }
 
         return view('vistaDetalle', [
             'notificacion' => $notificacion,
