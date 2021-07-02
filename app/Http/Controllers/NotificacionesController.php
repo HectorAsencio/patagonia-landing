@@ -139,12 +139,12 @@ class NotificacionesController extends Controller
     {
         $datosInvalidos = false;
 
-        if (strlen($request->titulo)<4){
-            Session::flash('datosIncorrectosMsg', 'El título debe tener como mínimo 4 caracteres');
+        if (strlen($request->titulo)<3){
+            Session::flash('datosIncorrectosMsg', 'El título debe tener como mínimo 3 caracteres');
             $datosInvalidos = true;
         }
-        if (strlen($request->titulo)>20){
-            Session::flash('datosIncorrectosTitulo', 'El título debe tener como máximo 20 caracteres');
+        if (strlen($request->titulo)>64){
+            Session::flash('datosIncorrectosTitulo', 'El título debe tener como máximo 64 caracteres');
             $datosInvalidos = true;
         }
         if (strlen($request->descripcion)<10){
@@ -357,11 +357,11 @@ class NotificacionesController extends Controller
 
     public function crear(Request $request){
         try{
-            if (strlen($request->titulo)<4){
-                return response()->json(['flag'=>'failure', 'mensaje'=>'El título debe tener como mínimo 4 caracteres'], 400, [], JSON_NUMERIC_CHECK);
+            if (strlen($request->titulo)<3){
+                return response()->json(['flag'=>'failure', 'mensaje'=>'El título debe tener como mínimo 3 caracteres'], 400, [], JSON_NUMERIC_CHECK);
             }
-            if (strlen($request->titulo)>20){
-                return response()->json(['flag'=>'failure', 'mensaje'=>'El título debe tener como máximo 20 caracteres'], 400, [], JSON_NUMERIC_CHECK);
+            if (strlen($request->titulo)>64){
+                return response()->json(['flag'=>'failure', 'mensaje'=>'El título debe tener como máximo 64 caracteres'], 400, [], JSON_NUMERIC_CHECK);
             }
             if (strlen($request->descripcion)<10){
                 return response()->json(['flag'=>'failure', 'mensaje'=>'La descripción debe tener como mínimo 10 caracteres'], 200, [], JSON_NUMERIC_CHECK);
