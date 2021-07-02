@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="validationServer03">Teléfono</label>
-                        <input id="telefono" name="telefono" type="text" class="form-control" pattern="^(\+?56)?(\s?)(0?9)(\s?)[9876543]\d{7}$" placeholder="+56912345678" value="{{Auth::user()->telefono}}" required>
+                        <input id="telefono" name="telefono" type="text" class="form-control" pattern="^(\+?56)?(\s?)(0?9)(\s?)[9876543210]\d{7}$" placeholder="+56912345678" value="{{Auth::user()->telefono}}" required>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="validationServer04">Cargo</label>
