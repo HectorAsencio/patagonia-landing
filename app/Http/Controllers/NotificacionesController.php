@@ -373,7 +373,7 @@ class NotificacionesController extends Controller
                 return response()->json(['flag'=>'failure', 'mensaje'=>'Debe seleccionar un receptor'], 200, [], JSON_NUMERIC_CHECK);
             }
 
-            $file = request()->file('upload');
+            $file = $request->urlFile;
 
             if($file->guessExtension()=="pdf"){
 
