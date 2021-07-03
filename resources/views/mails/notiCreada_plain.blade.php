@@ -1,6 +1,6 @@
 Estimado {{ $demo->receiver }}:
 
-Tiene una nueva notificacion:  "{{ $demo->titulo }}" 
+A traves de NotifyBoard se le ha enviado una nueva notificación para su información: <b>{{ $demo->titulo }}</b>
 
 Puede revisar el detalle de la notificacion en el siguiente link:
 

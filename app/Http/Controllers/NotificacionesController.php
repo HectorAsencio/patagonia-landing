@@ -391,6 +391,17 @@ class NotificacionesController extends Controller
                 'urlFile' => $uploadFullUrl
             ]);
 
+            $receptor = User::find($request->receptor);
+            $objDemo = new \stdClass();
+            $objDemo->titulo = $notificacion->titulo;
+            $objDemo->sender = 'NotifyBoard';
+            $objDemo->receiver = $receptor->name;
+            $objDemo->id = $notificacion->id;
+
+            Mail::to($receptor->email)->send(new DemoCrearMail($objDemo));
+
+            return redirect("/misnotificaciones");
+
             return response()->json(['flag'=>'success', 'mensaje'=>'Notificación creada exitosamente'], 200, [], JSON_NUMERIC_CHECK);
         } catch (\Exception $e) {
             return response()->json(['flag'=>'failure', 'mensaje'=>$e->getMessage()], 200, []);
