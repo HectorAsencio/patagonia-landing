@@ -375,13 +375,11 @@ class NotificacionesController extends Controller
 
             $file = $request->urlFile;
 
-            if ($file != NULL) {
-                if($file->guessExtension()=="pdf"){
+            if($file->guessExtension()=="pdf"){
 
-                    $upload = Storage::disk('s3')->put($file->getClientOriginalName(), $file, 'public');
-                    $uploadFullUrl = "https://notifyboard.s3.sa-east-1.amazonaws.com/" . $upload;
-                
-                }
+                $upload = Storage::disk('s3')->put($file->getClientOriginalName(), $file, 'public');
+                $uploadFullUrl = "https://notifyboard.s3.sa-east-1.amazonaws.com/" . $upload;
+            
             }
 
             $notificacion = Notificacion::create([
