@@ -400,8 +400,6 @@ class NotificacionesController extends Controller
 
             Mail::to($receptor->email)->send(new DemoCrearMail($objDemo));
 
-            return redirect("/misnotificaciones");
-
             return response()->json(['flag'=>'success', 'mensaje'=>'Notificación creada exitosamente'], 200, [], JSON_NUMERIC_CHECK);
         } catch (\Exception $e) {
             return response()->json(['flag'=>'failure', 'mensaje'=>$e->getMessage()], 200, []);
