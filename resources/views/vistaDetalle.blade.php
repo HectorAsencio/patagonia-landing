@@ -2,6 +2,8 @@
 
 @section('content')
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <style>
     .btn-primary {
         background-color: #4ad0ff !important;
@@ -87,7 +89,7 @@
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/pendiente" class="btn btn-info btn-circle btn-md"><i class="fa fa-clock" style="padding-top: 5px;"></i></a>
                     <a type="button" href="/notificaciones/actualizar/{{ $notificacion->id}}/rechazar" class="btn btn-danger btn-circle btn-md"><i class="fa fa-times" style="padding-top: 5px;"></i></a>
                         @if(Auth::user()->id==$notificacion->solicitante_id)
-                        <a type="button" href="/eliminar/notificacion/{{ $notificacion->id}}" class="btn btn-danger btn-circle btn-md"><i class="fa fa-trash" style="padding-top: 5px;"></i></a>
+                        <button id="boton-2eliminar" class="boton-2eliminar btn btn-danger btn-circle btn-md"><i class="fa fa-trash"></i></button>
                         @else
                         @endif
                     @elseif ($notificacion->estado=="Pendiente")
@@ -106,5 +108,26 @@
             </div>
         </div>
 </section>
+
+<script>
+    $('.boton-2eliminar').click(function(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Estás seguro de eliminar la notificación?',
+            text: "No podrás recuperarla una vez eliminada",
+            icon: 'Advertencia',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, eliminar.',
+            cancelButtonText: 'Cancelar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = "/eliminar/notificacion/{{ $notificacion->id}}"
+            }
+        })
+
+    });
+</script>
 
 @endsection
