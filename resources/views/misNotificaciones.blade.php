@@ -95,10 +95,28 @@
                                 <a type="button" href="/notificaciones/{{ $noti->id }}" class="btn btn-primary btn-circle btn-md"><i class="fa fa-eye" style="padding-top: 5px;"></i></a>
                                 @if($noti->estado=="Nueva")
                                 <button id="boton-eliminar" class="boton-eliminar btn btn-danger btn-circle btn-md"><i class="fa fa-trash"></i></button>
+                                <script>
+                                    $('.boton-eliminar').click(function(e) {
+                                        e.preventDefault();
+                                        Swal.fire({
+                                            title: '¿Estás seguro de eliminar la notificación?',
+                                            text: "No podrás recuperarla una vez eliminada",
+                                            icon: "warning",
+                                            showCancelButton: true,
+                                            confirmButtonColor: '#3085d6',
+                                            cancelButtonColor: '#d33',
+                                            confirmButtonText: 'Si, eliminar.',
+                                            cancelButtonText: 'Cancelar',
+                                        }).then((result) => {
+                                            if (result.isConfirmed) {
+                                                window.location = "/eliminar/notificacion/{{ $noti->id}}"
+                                            }
+                                        })
+                                    });
+                                </script>
                                 @endif
                             </td>
                         </tr>
-
                         @endforeach
                     </tbody>
                 </table>
@@ -107,26 +125,5 @@
         </div>
     </div>
 </section>
-
-<script>
-    $('.boton-eliminar').click(function(e) {
-        e.preventDefault();
-        Swal.fire({
-            title: '¿Estás seguro de eliminar la notificación?',
-            text: "No podrás recuperarla una vez eliminada",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, eliminar.',
-            cancelButtonText: 'Cancelar',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location = "/eliminar/notificacion/{{ $noti->id}}"
-            }
-        })
-
-    });
-</script>
 
 @endsection
