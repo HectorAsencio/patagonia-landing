@@ -46,6 +46,7 @@
     .fa {
         font-size: 20px
     }
+
 </style>
 
 <!-- ================ contact section start ================= -->
@@ -115,7 +116,7 @@
         Swal.fire({
             title: '¿Estás seguro de eliminar la notificación?',
             text: "No podrás recuperarla una vez eliminada",
-            icon: 'Advertencia',
+            icon: "warning",
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
